@@ -313,7 +313,7 @@
     </div>
     <div class="kpi-card kpi-warning kpi-clickable" onclick="resetAllFilters()" title="Total de ordens de baixa registradas">
       <div class="kpi-title">Total de Baixas</div>
-      <div class="kpi-value" id="kpi-total-baixas">157</div>
+      <div class="kpi-value" id="kpi-total-baixas">158</div>
       <div class="kpi-sub" id="kpi-total-sub">Ocorrências auditadas no filtro</div>
     </div>
     <div class="kpi-card kpi-purple">
@@ -341,7 +341,7 @@
       </div>
       <div class="summary-strip" id="baixas-ativas-summary-strip">
         <span>Viaturas Paradas Agora: <strong>8</strong></span>
-        <span>Dias Acumulados em Baixa: <strong>160 dias</strong></span>
+        <span>Dias Acumulados em Baixa: <strong>152 dias</strong></span>
       </div>
       <div class="table-scroll" style="height: 280px; max-height: 280px;">
         <table>
@@ -401,17 +401,6 @@
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td style="max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="PROBLEMA NA MANGUEIRA / VTR SOMENTE PARA SINALIZAÇÃO">PROBLEMA NA MANGUEIRA / VTR SOMENTE PARA SINALIZAÇÃO</td>
         </tr><tr>
-          <td><span class="tag-badge info-tag">BS-05</span></td>
-          <td>
-            <div style="font-weight: 700; color: var(--dark);">IT-05</div>
-            <div style="font-size: 11px; color: var(--neutral-muted);">SZM5D22</div>
-          </td>
-          <td><span class="tag-badge" style="background:#F1F5F9; color:#334155;">GRUPO PINHO</span></td>
-          <td>17/11/2026</td>
-          <td class="text-right" style="color: #1E293B; font-weight: 700;">9 dias</td>
-          <td><span class="tag-badge">PANE MECÂNICA</span></td>
-          <td style="max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="VTR NÃO ACIONA PARTIDA">VTR NÃO ACIONA PARTIDA</td>
-        </tr><tr>
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td>
             <div style="font-weight: 700; color: var(--dark);">IT-01</div>
@@ -444,6 +433,17 @@
           <td class="text-right" style="color: #1E293B; font-weight: 700;">2 dias</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td style="max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="TROCA DO RETENTOR">TROCA DO RETENTOR</td>
+        </tr><tr>
+          <td><span class="tag-badge info-tag">BS-03</span></td>
+          <td>
+            <div style="font-weight: 700; color: var(--dark);">CP-03</div>
+            <div style="font-size: 11px; color: var(--neutral-muted);">SRR1I60</div>
+          </td>
+          <td><span class="tag-badge" style="background:#F1F5F9; color:#334155;">GRUPO PINHO</span></td>
+          <td>25/11/2026</td>
+          <td class="text-right" style="color: #1E293B; font-weight: 700;">1 dias</td>
+          <td><span class="tag-badge">PANE MECÂNICA</span></td>
+          <td style="max-width: 220px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="SISTEMA DE EMBREAGEM">SISTEMA DE EMBREAGEM</td>
         </tr></tbody>
         </table>
       </div>
@@ -451,29 +451,29 @@
 
     <div class="card">
       <div class="card-title">Top Viaturas por Frequência de Baixas <span>Reincidência mecânica/operacional (Clique para filtrar)</span></div>
-      <div class="chart-container"><canvas id="chartFreqViatura" width="876" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 876px;"></canvas></div>
+      <div class="chart-container"><canvas id="chartFreqViatura" style="box-sizing: border-box; display: block; height: 280px; width: 876px;" width="876" height="280"></canvas></div>
     </div>
   </div>
 
   <div class="dashboard-grid-2">
     <div class="card">
       <div class="card-title">Distribuição por Tipo de Baixa <span>Causas de indisponibilidade da frota (Clique para filtrar)</span></div>
-      <div class="chart-container"><canvas id="chartTiposBaixa" width="876" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 876px;"></canvas></div>
+      <div class="chart-container"><canvas id="chartTiposBaixa" style="box-sizing: border-box; display: block; height: 280px; width: 876px;" width="876" height="280"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">Volume de Baixas por Base Operacional <span>Concentração por base BS-01 a BS-05 (Clique para filtrar)</span></div>
-      <div class="chart-container"><canvas id="chartBases" width="876" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 876px;"></canvas></div>
+      <div class="chart-container"><canvas id="chartBases" style="box-sizing: border-box; display: block; height: 280px; width: 876px;" width="876" height="280"></canvas></div>
     </div>
   </div>
 
   <div class="dashboard-grid-2">
     <div class="card">
       <div class="card-title">Evolução Mensal de Baixas <span>Tendência temporal de ocorrências</span></div>
-      <div class="chart-container"><canvas id="chartEvolucao" width="876" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 876px;"></canvas></div>
+      <div class="chart-container"><canvas id="chartEvolucao" style="box-sizing: border-box; display: block; height: 280px; width: 876px;" width="876" height="280"></canvas></div>
     </div>
     <div class="card">
       <div class="card-title">Distribuição por Locadora <span>Responsabilidade da frota (Clique para filtrar)</span></div>
-      <div class="chart-container"><canvas id="chartLocadoras" width="876" height="280" style="display: block; box-sizing: border-box; height: 280px; width: 876px;"></canvas></div>
+      <div class="chart-container"><canvas id="chartLocadoras" style="box-sizing: border-box; display: block; height: 280px; width: 876px;" width="876" height="280"></canvas></div>
     </div>
   </div>
 
@@ -577,11 +577,11 @@
     <div class="card">
       <div class="card-title">
         Detalhamento Histórico de Ocorrências
-        <span id="historico-count-label">157 registros filtrados</span>
+        <span id="historico-count-label">158 registros filtrados</span>
       </div>
       <div class="summary-strip" id="historico-summary-strip">
         <span>Em Baixa Agora: <strong>8</strong></span>
-        <span>Disponíveis: <strong>142</strong></span>
+        <span>Disponíveis: <strong>143</strong></span>
         <span>Substituídas / Desativadas: <strong>7</strong></span>
       </div>
       <div class="table-scroll">
@@ -602,7 +602,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CM-01</strong> (TTG3E31)</td>
           <td>12/09/2025</td>
-          <td>-</td>
+          <td>16/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">126</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -611,7 +611,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CM-01</strong> (TTG3E31)</td>
           <td>30/01/2026</td>
-          <td>-</td>
+          <td>04/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -620,7 +620,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CM-01</strong> (TTG3E31)</td>
           <td>18/03/2026</td>
-          <td>-</td>
+          <td>01/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">14</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -629,7 +629,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CM-01</strong> (TTG3E31)</td>
           <td>08/04/2026</td>
-          <td>-</td>
+          <td>12/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">65</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -638,7 +638,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CP-01</strong> (RIV7C97)</td>
           <td>01/02/2026</td>
-          <td>-</td>
+          <td>02/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -647,7 +647,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CP-01</strong> (RIV7C97)</td>
           <td>23/04/2026</td>
-          <td>-</td>
+          <td>23/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -656,7 +656,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CP-01</strong> (RIV7C97)</td>
           <td>13/06/2026</td>
-          <td>-</td>
+          <td>18/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -665,7 +665,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>IT-01</strong> (SZM5D32)</td>
           <td>26/03/2026</td>
-          <td>-</td>
+          <td>27/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -674,7 +674,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>IT-01</strong> (SZM5D32)</td>
           <td>19/05/2026</td>
-          <td>-</td>
+          <td>19/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -683,7 +683,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>IT-01</strong> (SZM5D32)</td>
           <td>12/06/2026</td>
-          <td>-</td>
+          <td>17/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -692,7 +692,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>IT-01</strong> (SZM5D32)</td>
           <td>22/06/2026</td>
-          <td>-</td>
+          <td>23/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -701,7 +701,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GL-01</strong> (RKE0C46)</td>
           <td>22/04/2026</td>
-          <td>-</td>
+          <td>02/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">10</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -710,7 +710,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GL-01</strong> (RKE0C46)</td>
           <td>27/05/2026</td>
-          <td>-</td>
+          <td>28/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -719,7 +719,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CM-02</strong> (TUT0I70)</td>
           <td>25/03/2026</td>
-          <td>-</td>
+          <td>26/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -728,7 +728,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CM-02</strong> (TUT0I70)</td>
           <td>15/05/2026</td>
-          <td>-</td>
+          <td>21/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -737,7 +737,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CM-02</strong> (TUT0I70)</td>
           <td>15/06/2026</td>
-          <td>-</td>
+          <td>18/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -746,7 +746,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>27/01/2026</td>
-          <td>-</td>
+          <td>03/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">7</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -755,7 +755,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>07/02/2026</td>
-          <td>-</td>
+          <td>27/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">20</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -764,7 +764,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>10/03/2026</td>
-          <td>-</td>
+          <td>23/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">13</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -773,7 +773,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>29/04/2026</td>
-          <td>-</td>
+          <td>29/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -782,7 +782,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>24/05/2026</td>
-          <td>-</td>
+          <td>24/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">31</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -791,7 +791,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GL-02</strong> (CUL6H20)</td>
           <td>26/12/2025</td>
-          <td>-</td>
+          <td>03/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -800,7 +800,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GL-02</strong> (CUL6H20)</td>
           <td>17/03/2026</td>
-          <td>-</td>
+          <td>25/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">69</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -809,7 +809,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GP-02</strong> (EZN7D66)</td>
           <td>07/03/2026</td>
-          <td>-</td>
+          <td>10/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -818,7 +818,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GP-02</strong> (EZN7D66)</td>
           <td>22/03/2026</td>
-          <td>-</td>
+          <td>25/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -827,7 +827,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GP-02</strong> (EZN7D66)</td>
           <td>08/04/2026</td>
-          <td>-</td>
+          <td>17/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">9</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -836,7 +836,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-02</strong> (SZM5D12)</td>
           <td>30/01/2026</td>
-          <td>-</td>
+          <td>04/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -845,7 +845,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-02</strong> (SZM5D12)</td>
           <td>01/03/2026</td>
-          <td>-</td>
+          <td>04/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -854,7 +854,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-02</strong> (SZM5D12)</td>
           <td>11/03/2026</td>
-          <td>-</td>
+          <td>07/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">27</td>
           <td><span class="tag-badge">VEÍCULO SUBSTITUÍDO</span></td>
           <td class="text-center"><span class="tag-badge warning-tag">Substituído</span></td>
@@ -863,7 +863,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-02</strong> (SZM5D12)</td>
           <td>14/05/2026</td>
-          <td>-</td>
+          <td>14/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -872,7 +872,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-06R</strong> (TTC1F52)</td>
           <td>26/03/2026</td>
-          <td>-</td>
+          <td>26/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -881,7 +881,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-06R</strong> (TTC1F52)</td>
           <td>12/04/2026</td>
-          <td>-</td>
+          <td>22/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">10</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -890,7 +890,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-06R</strong> (TTC1F52)</td>
           <td>08/05/2026</td>
-          <td>-</td>
+          <td>20/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">12</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -899,7 +899,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>25/01/2026</td>
-          <td>-</td>
+          <td>30/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -908,7 +908,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>11/03/2026</td>
-          <td>-</td>
+          <td>17/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -917,7 +917,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>25/03/2026</td>
-          <td>-</td>
+          <td>26/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -926,7 +926,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>14/04/2026</td>
-          <td>-</td>
+          <td>15/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -935,7 +935,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>20/05/2026</td>
-          <td>-</td>
+          <td>21/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -944,7 +944,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>17/06/2026</td>
-          <td>-</td>
+          <td>22/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -953,7 +953,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GP-02</strong> (EZN7D66)</td>
           <td>18/04/2026</td>
-          <td>-</td>
+          <td>15/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">27</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -962,7 +962,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GP-02</strong> (EZN7D66)</td>
           <td>28/05/2026</td>
-          <td>-</td>
+          <td>03/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -971,7 +971,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GP-02</strong> (EZN7D66)</td>
           <td>11/06/2026</td>
-          <td>-</td>
+          <td>11/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -980,7 +980,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CP-03</strong> (SRR1L60)</td>
           <td>29/01/2026</td>
-          <td>-</td>
+          <td>03/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -989,7 +989,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>IT-03</strong> (TCE8F28)</td>
           <td>12/09/2025</td>
-          <td>-</td>
+          <td>11/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">121</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -998,7 +998,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>IT-03</strong> (TCE8F28)</td>
           <td>25/02/2026</td>
-          <td>-</td>
+          <td>27/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1007,7 +1007,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>11/03/2026</td>
-          <td>-</td>
+          <td>17/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">37</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1016,7 +1016,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>IT-03</strong> (TCE8F28)</td>
           <td>13/05/2026</td>
-          <td>-</td>
+          <td>15/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1025,7 +1025,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CM-04</strong> (LUG8F45)</td>
           <td>19/03/2026</td>
-          <td>-</td>
+          <td>23/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1034,7 +1034,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CM-04</strong> (LUG8F45)</td>
           <td>13/04/2026</td>
-          <td>-</td>
+          <td>20/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">7</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1043,7 +1043,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CM-04</strong> (LUG8F45)</td>
           <td>21/04/2026</td>
-          <td>-</td>
+          <td>14/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">23</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1052,7 +1052,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>14/05/2026</td>
-          <td>-</td>
+          <td>16/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1061,7 +1061,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CP-04</strong> (RJS7E06)</td>
           <td>10/01/2026</td>
-          <td>-</td>
+          <td>16/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1070,7 +1070,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CP-04</strong> (RJS7E06)</td>
           <td>09/02/2026</td>
-          <td>-</td>
+          <td>09/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">59</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1079,7 +1079,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CP-04</strong> (RJS7E06)</td>
           <td>25/05/2026</td>
-          <td>-</td>
+          <td>25/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1088,7 +1088,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GL-04</strong> (SRR0F96)</td>
           <td>02/01/2026</td>
-          <td>-</td>
+          <td>03/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1097,7 +1097,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GL-04</strong> (SRR0F96)</td>
           <td>03/02/2026</td>
-          <td>-</td>
+          <td>21/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">18</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1106,7 +1106,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GL-04</strong> (SRR0F96)</td>
           <td>27/03/2026</td>
-          <td>-</td>
+          <td>27/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1124,7 +1124,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>25/01/2026</td>
-          <td>-</td>
+          <td>26/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1133,7 +1133,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>28/02/2026</td>
-          <td>-</td>
+          <td>06/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1142,7 +1142,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>13/03/2026</td>
-          <td>-</td>
+          <td>18/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1151,7 +1151,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>23/03/2026</td>
-          <td>-</td>
+          <td>31/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1160,7 +1160,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>31/03/2026</td>
-          <td>-</td>
+          <td>06/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1169,7 +1169,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>08/04/2026</td>
-          <td>-</td>
+          <td>08/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1178,7 +1178,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>14/05/2026</td>
-          <td>-</td>
+          <td>15/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1187,7 +1187,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>19/05/2026</td>
-          <td>-</td>
+          <td>19/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1196,7 +1196,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>24/05/2026</td>
-          <td>-</td>
+          <td>25/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1205,7 +1205,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>09/06/2026</td>
-          <td>-</td>
+          <td>17/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1214,7 +1214,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>IT-04</strong> (SZM5D42)</td>
           <td>16/01/2026</td>
-          <td>-</td>
+          <td>17/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1223,7 +1223,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>IT-04</strong> (SZM5D42)</td>
           <td>26/01/2026</td>
-          <td>-</td>
+          <td>27/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1232,7 +1232,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>IT-04</strong> (SZM5D42)</td>
           <td>19/02/2026</td>
-          <td>-</td>
+          <td>21/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">MANUTENÇÃO PREVENTIVA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1241,7 +1241,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CP-05</strong> (RKD9A48)</td>
           <td>16/12/2025</td>
-          <td>-</td>
+          <td>11/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">26</td>
           <td><span class="tag-badge">VEÍCULO SUBSTITUÍDO</span></td>
           <td class="text-center"><span class="tag-badge warning-tag">Substituído</span></td>
@@ -1250,7 +1250,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CP-05</strong> (RKD9A48)</td>
           <td>18/01/2026</td>
-          <td>-</td>
+          <td>12/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">25</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1259,7 +1259,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CP-05</strong> (RKD9A48)</td>
           <td>21/03/2026</td>
-          <td>-</td>
+          <td>25/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1268,7 +1268,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>01/01/2026</td>
-          <td>-</td>
+          <td>04/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1277,7 +1277,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>29/01/2026</td>
-          <td>-</td>
+          <td>30/01/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1286,7 +1286,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>11/02/2026</td>
-          <td>-</td>
+          <td>13/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1295,7 +1295,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>20/02/2026</td>
-          <td>-</td>
+          <td>11/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">19</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1304,7 +1304,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>13/04/2026</td>
-          <td>-</td>
+          <td>20/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">7</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1313,7 +1313,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>04/05/2026</td>
-          <td>-</td>
+          <td>06/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1322,7 +1322,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>12/05/2026</td>
-          <td>-</td>
+          <td>20/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1331,7 +1331,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>14/05/2026</td>
-          <td>-</td>
+          <td>15/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1340,7 +1340,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>12/02/2026</td>
-          <td>-</td>
+          <td>13/02/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1349,7 +1349,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>06/03/2026</td>
-          <td>-</td>
+          <td>10/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1358,7 +1358,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>10/03/2026</td>
-          <td>-</td>
+          <td>31/03/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">21</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1367,7 +1367,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>07/04/2026</td>
-          <td>-</td>
+          <td>15/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1376,7 +1376,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>21/04/2026</td>
-          <td>-</td>
+          <td>23/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1385,7 +1385,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>07/05/2026</td>
-          <td>-</td>
+          <td>11/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1394,7 +1394,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>21/05/2026</td>
-          <td>-</td>
+          <td>23/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1403,7 +1403,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>IT-05</strong> (SZM5D22)</td>
           <td>14/05/2026</td>
-          <td>-</td>
+          <td>15/05/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1412,7 +1412,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>10/06/2026</td>
-          <td>-</td>
+          <td>17/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">7</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1421,7 +1421,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>26/06/2026</td>
-          <td>-</td>
+          <td>27/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1430,7 +1430,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>01/07/2026</td>
-          <td>-</td>
+          <td>02/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1439,7 +1439,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GP-03R</strong> (LUM6425)</td>
           <td>23/04/2026</td>
-          <td>-</td>
+          <td>23/04/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">0</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1448,7 +1448,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GP-03R</strong> (LUM6425)</td>
           <td>08/06/2026</td>
-          <td>-</td>
+          <td>12/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1457,7 +1457,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-02</strong> (SZM5D12)</td>
           <td>28/05/2026</td>
-          <td>-</td>
+          <td>20/06/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">23</td>
           <td><span class="tag-badge">VEÍCULO SUBSTITUÍDO</span></td>
           <td class="text-center"><span class="tag-badge warning-tag">Substituído</span></td>
@@ -1466,7 +1466,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CM-02</strong> (TUT0I70)</td>
           <td>06/07/2026</td>
-          <td>-</td>
+          <td>17/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">11</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1475,7 +1475,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GL-02</strong> (CUL6H20)</td>
           <td>03/07/2026</td>
-          <td>-</td>
+          <td>23/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">20</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1484,7 +1484,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GP-01</strong> (FLA9I65)</td>
           <td>27/06/2026</td>
-          <td>-</td>
+          <td>15/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">141</td>
           <td><span class="tag-badge">VEÍCULO SUBSTITUÍDO</span></td>
           <td class="text-center"><span class="tag-badge warning-tag">Substituído</span></td>
@@ -1493,7 +1493,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>IT-05</strong> (SZM5D22)</td>
           <td>09/07/2026</td>
-          <td>-</td>
+          <td>13/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1502,7 +1502,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GL-04</strong> (SRR0F96)</td>
           <td>11/07/2026</td>
-          <td>-</td>
+          <td>15/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1511,7 +1511,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>11/07/2026</td>
-          <td>-</td>
+          <td>14/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1520,7 +1520,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CP-04</strong> (RJS7E06)</td>
           <td>12/07/2026</td>
-          <td>-</td>
+          <td>13/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1529,7 +1529,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CP-05</strong> (RKD9A48)</td>
           <td>13/07/2026</td>
-          <td>-</td>
+          <td>19/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1538,7 +1538,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>15/07/2026</td>
-          <td>-</td>
+          <td>27/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">12</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1547,7 +1547,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>17/07/2026</td>
-          <td>-</td>
+          <td>22/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1556,7 +1556,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GL-01</strong> (RKE0C46)</td>
           <td>20/07/2026</td>
-          <td>-</td>
+          <td>29/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">9</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1565,7 +1565,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>20/07/2026</td>
-          <td>-</td>
+          <td>05/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">16</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1574,7 +1574,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>25/07/2026</td>
-          <td>-</td>
+          <td>27/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1583,7 +1583,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CM-04</strong> (LUG8F45)</td>
           <td>26/07/2026</td>
-          <td>-</td>
+          <td>27/07/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1592,7 +1592,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>30/07/2026</td>
-          <td>-</td>
+          <td>04/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1610,7 +1610,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>02/08/2026</td>
-          <td>-</td>
+          <td>04/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1619,7 +1619,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>IT-04</strong> (SZM5D42)</td>
           <td>03/08/2026</td>
-          <td>-</td>
+          <td>07/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1628,7 +1628,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>08/08/2026</td>
-          <td>-</td>
+          <td>17/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">9</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1637,7 +1637,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GL-01</strong> (RKE0C46)</td>
           <td>12/08/2026</td>
-          <td>-</td>
+          <td>18/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1646,7 +1646,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>IT-05</strong> (SZM5D22)</td>
           <td>10/08/2026</td>
-          <td>-</td>
+          <td>12/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1655,7 +1655,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>IT-06R</strong> (TTC1F52)</td>
           <td>15/08/2026</td>
-          <td>-</td>
+          <td>27/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">12</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1664,7 +1664,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>18/08/2026</td>
-          <td>-</td>
+          <td>01/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">14</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1673,7 +1673,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>20/08/2026</td>
-          <td>-</td>
+          <td>25/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">5</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1682,7 +1682,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>21/08/2026</td>
-          <td>-</td>
+          <td>10/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">20</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1691,7 +1691,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CM-04</strong> (LUG8F45)</td>
           <td>25/08/2026</td>
-          <td>-</td>
+          <td>31/08/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">VEÍCULO SUBSTITUÍDO</span></td>
           <td class="text-center"><span class="tag-badge warning-tag">Substituído</span></td>
@@ -1700,7 +1700,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CM-05</strong> (TUS0G74)</td>
           <td>02/09/2026</td>
-          <td>-</td>
+          <td>15/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">13</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1709,7 +1709,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CP-03</strong> (SRR1I60)</td>
           <td>15/09/2026</td>
-          <td>-</td>
+          <td>18/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1718,7 +1718,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>CP-05</strong> (RKD9A48)</td>
           <td>14/09/2026</td>
-          <td>-</td>
+          <td>16/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1727,7 +1727,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GL-02</strong> (CUL6H20)</td>
           <td>30/08/2026</td>
-          <td>-</td>
+          <td>07/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1745,7 +1745,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GL-04</strong> (SRR0F96)</td>
           <td>06/09/2026</td>
-          <td>-</td>
+          <td>08/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1754,7 +1754,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GP-03R</strong> (LUM6A25)</td>
           <td>01/09/2026</td>
-          <td>-</td>
+          <td>04/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1763,7 +1763,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-02</strong> (RNK1H96)</td>
           <td>06/09/2026</td>
-          <td>-</td>
+          <td>08/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1772,7 +1772,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>IT-02</strong> (RNK1H96)</td>
           <td>22/09/2026</td>
-          <td>-</td>
+          <td>25/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">3</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1781,7 +1781,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>24/09/2026</td>
-          <td>-</td>
+          <td>11/10/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">17</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1790,7 +1790,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>24/09/2026</td>
-          <td>-</td>
+          <td>26/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1799,7 +1799,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>27/09/2026</td>
-          <td>-</td>
+          <td>29/09/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1817,7 +1817,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>IT-06R</strong> (TTC1F52)</td>
           <td>01/10/2026</td>
-          <td>-</td>
+          <td>06/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--danger);">36</td>
           <td><span class="tag-badge">DANOS A LATARIA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1826,7 +1826,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>CP-01</strong> (RIV7C97)</td>
           <td>07/10/2026</td>
-          <td>-</td>
+          <td>17/10/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">10</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1835,7 +1835,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>GL-05</strong> (LUA6J40)</td>
           <td>09/10/2026</td>
-          <td>-</td>
+          <td>15/10/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">6</td>
           <td><span class="tag-badge">TROCA DE PNEUS</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1844,7 +1844,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CP-03</strong> (SRR1I60)</td>
           <td>11/10/2026</td>
-          <td>-</td>
+          <td>13/10/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1853,7 +1853,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GP-03R</strong> (LUM6A25)</td>
           <td>15/10/2026</td>
-          <td>-</td>
+          <td>23/10/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1862,7 +1862,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>CP-02</strong> (RJF7H49)</td>
           <td>17/10/2026</td>
-          <td>-</td>
+          <td>06/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">20</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1871,7 +1871,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>17/10/2026</td>
-          <td>-</td>
+          <td>27/10/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">10</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1880,7 +1880,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>GL-04</strong> (SRR0F96)</td>
           <td>21/10/2026</td>
-          <td>-</td>
+          <td>06/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">16</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1889,7 +1889,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CP-04</strong> (RJS7E06)</td>
           <td>03/11/2026</td>
-          <td>-</td>
+          <td>07/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1898,7 +1898,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CP-03</strong> (SRR1I60)</td>
           <td>03/11/2026</td>
-          <td>-</td>
+          <td>07/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1907,7 +1907,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>CM-03</strong> (RIT2F23)</td>
           <td>04/11/2026</td>
-          <td>-</td>
+          <td>19/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">15</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1916,7 +1916,7 @@
           <td><span class="tag-badge info-tag">BS-04</span></td>
           <td><strong>CM-04</strong> (RIR3F12)</td>
           <td>05/11/2026</td>
-          <td>-</td>
+          <td>07/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1925,7 +1925,7 @@
           <td><span class="tag-badge info-tag">BS-02</span></td>
           <td><strong>GP-02</strong> (EZN7D66)</td>
           <td>05/11/2026</td>
-          <td>-</td>
+          <td>07/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1934,7 +1934,7 @@
           <td><span class="tag-badge info-tag">BS-01</span></td>
           <td><strong>GP-03R</strong> (LUM6A25)</td>
           <td>13/11/2026</td>
-          <td>-</td>
+          <td>17/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1943,7 +1943,7 @@
           <td><span class="tag-badge info-tag">BS-03</span></td>
           <td><strong>GL-03</strong> (SRQ5A66)</td>
           <td>10/11/2026</td>
-          <td>-</td>
+          <td>14/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">4</td>
           <td><span class="tag-badge">PANE ELÉTRICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1961,7 +1961,7 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>IT-06R</strong> (TTC1F52)</td>
           <td>14/11/2026</td>
-          <td>-</td>
+          <td>16/11/2026</td>
           <td class="text-right" style="font-weight: 700; color: var(--dark);">2</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
@@ -1979,10 +1979,10 @@
           <td><span class="tag-badge info-tag">BS-05</span></td>
           <td><strong>IT-05</strong> (SZM5D22)</td>
           <td>17/11/2026</td>
-          <td>-</td>
-          <td class="text-right" style="font-weight: 700; color: var(--dark);">9</td>
+          <td>25/11/2026</td>
+          <td class="text-right" style="font-weight: 700; color: var(--dark);">8</td>
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
-          <td class="text-center"><span class="tag-badge alert-tag">Em Baixa</span></td>
+          <td class="text-center"><span class="tag-badge success-tag">Disponível</span></td>
           <td style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="VTR NÃO ACIONA PARTIDA">VTR NÃO ACIONA PARTIDA</td>
         </tr><tr>
           <td><span class="tag-badge info-tag">BS-01</span></td>
@@ -2011,6 +2011,15 @@
           <td><span class="tag-badge">PANE MECÂNICA</span></td>
           <td class="text-center"><span class="tag-badge alert-tag">Em Baixa</span></td>
           <td style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="TROCA DO RETENTOR">TROCA DO RETENTOR</td>
+        </tr><tr>
+          <td><span class="tag-badge info-tag">BS-03</span></td>
+          <td><strong>CP-03</strong> (SRR1I60)</td>
+          <td>25/11/2026</td>
+          <td>-</td>
+          <td class="text-right" style="font-weight: 700; color: var(--dark);">1</td>
+          <td><span class="tag-badge">PANE MECÂNICA</span></td>
+          <td class="text-center"><span class="tag-badge alert-tag">Em Baixa</span></td>
+          <td style="max-width: 250px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="SISTEMA DE EMBREAGEM">SISTEMA DE EMBREAGEM</td>
         </tr></tbody>
         </table>
       </div>
@@ -2024,8 +2033,8 @@
     const formatIntBR = (num) => new Intl.NumberFormat('pt-BR').format(num);
     const formatDecBR = (num) => new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }).format(num);
 
-    let RAW_DATA = [{"id":1,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2025-09-12","data_baixa_br":"12/09/2025","data_retorno":"2026-01-16","data_retorno_br":"-","tempo_indisponivel":126,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO NA CAIXA DE MARCHA","ano":"2025","mes_num":9},{"id":2,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2026-01-30","data_baixa_br":"30/01/2026","data_retorno":"2026-02-04","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NO MUNCK","ano":"2026","mes_num":1},{"id":3,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2026-03-18","data_baixa_br":"18/03/2026","data_retorno":"2026-04-01","data_retorno_br":"-","tempo_indisponivel":14,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":4,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2026-04-08","data_baixa_br":"08/04/2026","data_retorno":"2026-06-12","data_retorno_br":"-","tempo_indisponivel":65,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA ELETRICO","ano":"2026","mes_num":4},{"id":5,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-02-01","data_baixa_br":"01/02/2026","data_retorno":"2026-02-02","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ESGUICHO DA MANGUEIRA","ano":"2026","mes_num":2},{"id":6,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-04-23","data_baixa_br":"23/04/2026","data_retorno":"2026-04-23","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"TROCA DE FILTRO DE ÓLEO","ano":"2026","mes_num":4},{"id":7,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-06-13","data_baixa_br":"13/06/2026","data_retorno":"2026-06-18","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PNEUS EM PÉSSIMAS CONDIÇÕES PRA RODAR","ano":"2026","mes_num":6},{"id":8,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-03-26","data_baixa_br":"26/03/2026","data_retorno":"2026-03-27","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO ALTERNADOR","ano":"2026","mes_num":3},{"id":9,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-05-19","data_baixa_br":"19/05/2026","data_retorno":"2026-05-19","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":5},{"id":10,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-06-12","data_baixa_br":"12/06/2026","data_retorno":"2026-06-17","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"DISCO DE EMBREAGEM","ano":"2026","mes_num":6},{"id":11,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-06-22","data_baixa_br":"22/06/2026","data_retorno":"2026-06-23","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"PREVENTIVA","ano":"2026","mes_num":6},{"id":12,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-04-22","data_baixa_br":"22/04/2026","data_retorno":"2026-05-02","data_retorno_br":"-","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CORREIA DO MOTOR","ano":"2026","mes_num":4},{"id":13,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-05-27","data_baixa_br":"27/05/2026","data_retorno":"2026-05-28","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"SISTEMA ELÉTRICO","ano":"2026","mes_num":5},{"id":14,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-03-25","data_baixa_br":"25/03/2026","data_retorno":"2026-03-26","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO ESTÁ FAZENDO REMOÇÃO","ano":"2026","mes_num":3},{"id":15,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-05-15","data_baixa_br":"15/05/2026","data_retorno":"2026-05-21","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TIROU OS VAZAMENTOS DO SETOR DE DIREÇÃO, FEZ A TROCA DO NÍVEL DE ÓLEO HIDRÁULICO DO TANQUE","ano":"2026","mes_num":5},{"id":16,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-06-15","data_baixa_br":"15/06/2026","data_retorno":"2026-06-18","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS EM PÉSSIMAS CONDIÇÕES PARA RODAR","ano":"2026","mes_num":6},{"id":17,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-01-27","data_baixa_br":"27/01/2026","data_retorno":"2026-02-03","data_retorno_br":"-","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"AVARIA DURANTE OCORRÊNCIA","ano":"2026","mes_num":1},{"id":18,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-02-07","data_baixa_br":"07/02/2026","data_retorno":"2026-02-27","data_retorno_br":"-","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"BATERIA RETIRADA E COLOCADA NO GL-02","ano":"2026","mes_num":2},{"id":19,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-03-10","data_baixa_br":"10/03/2026","data_retorno":"2026-03-23","data_retorno_br":"-","tempo_indisponivel":13,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CABO DA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":20,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-04-29","data_baixa_br":"29/04/2026","data_retorno":"2026-04-29","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"FALTA DE LUBRIFICAÇÃO NO CARDÃ, TROCA DO VIDRO DA JANELA DIRETA E RETROVISOR DO LADO DO MOTORISTA","ano":"2026","mes_num":4},{"id":21,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-05-24","data_baixa_br":"24/05/2026","data_retorno":"2026-06-24","data_retorno_br":"-","tempo_indisponivel":31,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DA BOMBA DE ÁGUA","ano":"2026","mes_num":5},{"id":22,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2025-12-26","data_baixa_br":"26/12/2025","data_retorno":"2026-01-03","data_retorno_br":"-","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"ROTA DO PARÁ","motivo":"PNEUS DESGASTADOS","ano":"2025","mes_num":12},{"id":23,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-03-17","data_baixa_br":"17/03/2026","data_retorno":"2026-05-25","data_retorno_br":"-","tempo_indisponivel":69,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"ROTA DO PARÁ","motivo":"ALINHAMENTO, TROCA DOS PNEUS E CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":24,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-03-07","data_baixa_br":"07/03/2026","data_retorno":"2026-03-10","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA  MARCHA E VAZAMENTO DE ÓLEO","ano":"2026","mes_num":3},{"id":25,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-03-22","data_baixa_br":"22/03/2026","data_retorno":"2026-03-25","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":26,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-04-08","data_baixa_br":"08/04/2026","data_retorno":"2026-04-17","data_retorno_br":"-","tempo_indisponivel":9,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA LANÇA","ano":"2026","mes_num":4},{"id":27,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-01-30","data_baixa_br":"30/01/2026","data_retorno":"2026-02-04","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DE ÓLEO E PNEUS","ano":"2026","mes_num":1},{"id":28,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-03-01","data_baixa_br":"01/03/2026","data_retorno":"2026-03-04","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"GIROFLEX E VIDROS COM PROBLEMA.","ano":"2026","mes_num":3},{"id":29,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-03-11","data_baixa_br":"11/03/2026","data_retorno":"2026-04-07","data_retorno_br":"-","tempo_indisponivel":27,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"VEÍCULO TROCADO","ano":"2026","mes_num":3},{"id":30,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-14","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DE ÓLEO","ano":"2026","mes_num":5},{"id":31,"bso":"BS-02","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-03-26","data_baixa_br":"26/03/2026","data_retorno":"2026-03-26","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO SISTEMA DE ARREFECIMENTO / TURNO DIURNO BAIXADO","ano":"2026","mes_num":3},{"id":32,"bso":"BS-02","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-04-12","data_baixa_br":"12/04/2026","data_retorno":"2026-04-22","data_retorno_br":"-","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"AQUECIMENTO - PROBLEMAS DE AQUECIMENTO","ano":"2026","mes_num":4},{"id":33,"bso":"BS-02","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-05-08","data_baixa_br":"08/05/2026","data_retorno":"2026-05-20","data_retorno_br":"-","tempo_indisponivel":12,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS","ano":"2026","mes_num":5},{"id":34,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-01-25","data_baixa_br":"25/01/2026","data_retorno":"2026-01-30","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA BATERIA","ano":"2026","mes_num":1},{"id":35,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-03-11","data_baixa_br":"11/03/2026","data_retorno":"2026-03-17","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO FAZ REMOÇÃO, PROBLEMA NA REDUTORA","ano":"2026","mes_num":3},{"id":36,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-03-25","data_baixa_br":"25/03/2026","data_retorno":"2026-03-26","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PARCIALMENTE BAIXADO, PNEUS GASTOS E RETROVISOR QUEBRADO","ano":"2026","mes_num":3},{"id":37,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-04-14","data_baixa_br":"14/04/2026","data_retorno":"2026-04-15","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTE DO PNEU E REDUTORA","ano":"2026","mes_num":4},{"id":38,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-05-20","data_baixa_br":"20/05/2026","data_retorno":"2026-05-21","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":5},{"id":39,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-06-17","data_baixa_br":"17/06/2026","data_retorno":"2026-06-22","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"PREVENTIVA","ano":"2026","mes_num":6},{"id":40,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-04-18","data_baixa_br":"18/04/2026","data_retorno":"2026-05-15","data_retorno_br":"-","tempo_indisponivel":27,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA FORÇA","ano":"2026","mes_num":4},{"id":41,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-05-28","data_baixa_br":"28/05/2026","data_retorno":"2026-06-03","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CARDAM QUEBROU","ano":"2026","mes_num":5},{"id":42,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-06-11","data_baixa_br":"11/06/2026","data_retorno":"2026-06-11","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"SISTEMA HIDRÁULICO COM PANE ( ALGUMAS JUNTAS ESTAVAM MAU APERTADAS)","ano":"2026","mes_num":6},{"id":43,"bso":"BS-03","viatura":"CP-03","placa":"SRR1L60","data_baixa":"2026-01-29","data_baixa_br":"29/01/2026","data_retorno":"2026-02-03","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO SISTEMA DE FREIO","ano":"2026","mes_num":1},{"id":44,"bso":"BS-03","viatura":"IT-03","placa":"TCE8F28","data_baixa":"2025-09-12","data_baixa_br":"12/09/2025","data_retorno":"2026-01-11","data_retorno_br":"-","tempo_indisponivel":121,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO NA CAIXA DE MARCHA","ano":"2025","mes_num":9},{"id":45,"bso":"BS-03","viatura":"IT-03","placa":"TCE8F28","data_baixa":"2026-02-25","data_baixa_br":"25/02/2026","data_retorno":"2026-02-27","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO NA CAIXA DE MARCHA","ano":"2026","mes_num":2},{"id":46,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-03-11","data_baixa_br":"11/03/2026","data_retorno":"2026-04-17","data_retorno_br":"-","tempo_indisponivel":37,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":47,"bso":"BS-03","viatura":"IT-03","placa":"TCE8F28","data_baixa":"2026-05-13","data_baixa_br":"13/05/2026","data_retorno":"2026-05-15","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CAIXA DE MARCHA","ano":"2026","mes_num":5},{"id":48,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-03-19","data_baixa_br":"19/03/2026","data_retorno":"2026-03-23","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NOS FREIOS TRASEIRO","ano":"2026","mes_num":3},{"id":49,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-04-13","data_baixa_br":"13/04/2026","data_retorno":"2026-04-20","data_retorno_br":"-","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA EMBREAGEM","ano":"2026","mes_num":4},{"id":50,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-04-21","data_baixa_br":"21/04/2026","data_retorno":"2026-05-14","data_retorno_br":"-","tempo_indisponivel":23,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA EMBREAGEM","ano":"2026","mes_num":4},{"id":51,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-16","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA MANGUEIRA HIDRÁULICA","ano":"2026","mes_num":5},{"id":52,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-01-10","data_baixa_br":"10/01/2026","data_retorno":"2026-01-16","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"SOLDA NO TANQUE DE COMBUSTÍVEL","ano":"2026","mes_num":1},{"id":53,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-02-09","data_baixa_br":"09/02/2026","data_retorno":"2026-04-09","data_retorno_br":"-","tempo_indisponivel":59,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TOMADA DE FORÇA","ano":"2026","mes_num":2},{"id":54,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-05-25","data_baixa_br":"25/05/2026","data_retorno":"2026-05-25","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NOS FILTROS","ano":"2026","mes_num":5},{"id":55,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-01-02","data_baixa_br":"02/01/2026","data_retorno":"2026-01-03","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR","ano":"2026","mes_num":1},{"id":56,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-02-03","data_baixa_br":"03/02/2026","data_retorno":"2026-02-21","data_retorno_br":"-","tempo_indisponivel":18,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE DIREÇÃO","ano":"2026","mes_num":2},{"id":57,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-03-27","data_baixa_br":"27/03/2026","data_retorno":"2026-03-27","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO DA CAIXA DE DIREÇÃO","ano":"2026","mes_num":3},{"id":58,"bso":"BS-04","viatura":"GP-03","placa":"FDP5C18","data_baixa":"2026-02-14","data_baixa_br":"14/02/2026","data_retorno":"NÃO RETORN","data_retorno_br":"-","tempo_indisponivel":0,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO MOTOR","ano":"2026","mes_num":2},{"id":59,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-01-25","data_baixa_br":"25/01/2026","data_retorno":"2026-01-26","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PROBLEMA NAS RODAS","ano":"2026","mes_num":1},{"id":60,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-02-28","data_baixa_br":"28/02/2026","data_retorno":"2026-03-06","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":2},{"id":61,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-03-13","data_baixa_br":"13/03/2026","data_retorno":"2026-03-18","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO NA BOMBA HIDRÁULICA","ano":"2026","mes_num":3},{"id":62,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-03-23","data_baixa_br":"23/03/2026","data_retorno":"2026-03-31","data_retorno_br":"-","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA TOMADA DE FORÇA","ano":"2026","mes_num":3},{"id":63,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-03-31","data_baixa_br":"31/03/2026","data_retorno":"2026-04-06","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA LANÇA","ano":"2026","mes_num":3},{"id":64,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-04-08","data_baixa_br":"08/04/2026","data_retorno":"2026-04-08","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO HIDRAULICO","ano":"2026","mes_num":4},{"id":65,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-15","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTRICA","ano":"2026","mes_num":5},{"id":66,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-05-19","data_baixa_br":"19/05/2026","data_retorno":"2026-05-19","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TAMPA DO FILTRO SOLTOU","ano":"2026","mes_num":5},{"id":67,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-05-24","data_baixa_br":"24/05/2026","data_retorno":"2026-05-25","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NAS CUÍCAS DE FREIOS","ano":"2026","mes_num":5},{"id":68,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-06-09","data_baixa_br":"09/06/2026","data_retorno":"2026-06-17","data_retorno_br":"-","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"BOMBA DE ÁGUA","ano":"2026","mes_num":6},{"id":69,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-01-16","data_baixa_br":"16/01/2026","data_retorno":"2026-01-17","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":70,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-01-26","data_baixa_br":"26/01/2026","data_retorno":"2026-01-27","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":71,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-02-19","data_baixa_br":"19/02/2026","data_retorno":"2026-02-21","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":2},{"id":72,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2025-12-16","data_baixa_br":"16/12/2025","data_retorno":"2026-01-11","data_retorno_br":"-","tempo_indisponivel":26,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"TANQUE DE COMBUSTÍVEL FURADO / A VIATURA FOI TROCADA","ano":"2025","mes_num":12},{"id":73,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-01-18","data_baixa_br":"18/01/2026","data_retorno":"2026-02-12","data_retorno_br":"-","tempo_indisponivel":25,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTICA","ano":"2026","mes_num":1},{"id":74,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-03-21","data_baixa_br":"21/03/2026","data_retorno":"2026-03-25","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CERVO DA EMBREGAEM","ano":"2026","mes_num":3},{"id":75,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-01-01","data_baixa_br":"01/01/2026","data_retorno":"2026-01-04","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":76,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-01-29","data_baixa_br":"29/01/2026","data_retorno":"2026-01-30","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":77,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-02-11","data_baixa_br":"11/02/2026","data_retorno":"2026-02-13","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA EMBREAGEM","ano":"2026","mes_num":2},{"id":78,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-02-20","data_baixa_br":"20/02/2026","data_retorno":"2026-03-11","data_retorno_br":"-","tempo_indisponivel":19,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTICA","ano":"2026","mes_num":2},{"id":79,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-04-13","data_baixa_br":"13/04/2026","data_retorno":"2026-04-20","data_retorno_br":"-","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS, VAZAMENTO NO MOTOR, AR CONDICIONADO","ano":"2026","mes_num":4},{"id":80,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-05-04","data_baixa_br":"04/05/2026","data_retorno":"2026-05-06","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PROBLEMAS NO PNEU","ano":"2026","mes_num":5},{"id":81,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-05-12","data_baixa_br":"12/05/2026","data_retorno":"2026-05-20","data_retorno_br":"-","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTRICA E PNEUS GASTOS","ano":"2026","mes_num":5},{"id":82,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-15","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS","ano":"2026","mes_num":5},{"id":83,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-02-12","data_baixa_br":"12/02/2026","data_retorno":"2026-02-13","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":2},{"id":84,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-03-06","data_baixa_br":"06/03/2026","data_retorno":"2026-03-10","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CHASSI TRINCADO","ano":"2026","mes_num":3},{"id":85,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-03-10","data_baixa_br":"10/03/2026","data_retorno":"2026-03-31","data_retorno_br":"-","tempo_indisponivel":21,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA ELETRICO, FICA BAIXADO NO TURNO NOTURNO","ano":"2026","mes_num":3},{"id":86,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-04-07","data_baixa_br":"07/04/2026","data_retorno":"2026-04-15","data_retorno_br":"-","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CAIXA DE CÂMBIO, AR CONDICIONADO, PROBLEMAS ELÉTRICOS","ano":"2026","mes_num":4},{"id":87,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-04-21","data_baixa_br":"21/04/2026","data_retorno":"2026-04-23","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"REDUTORA","ano":"2026","mes_num":4},{"id":88,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-05-07","data_baixa_br":"07/05/2026","data_retorno":"2026-05-11","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS E AR CONDICIONADO","ano":"2026","mes_num":5},{"id":89,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-05-21","data_baixa_br":"21/05/2026","data_retorno":"2026-05-23","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA DA REDUTORA","ano":"2026","mes_num":5},{"id":90,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-15","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS","ano":"2026","mes_num":5},{"id":91,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-06-10","data_baixa_br":"10/06/2026","data_retorno":"2026-06-17","data_retorno_br":"-","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"FILTRO DE ARLA, PERDA DE FORÇA","ano":"2026","mes_num":6},{"id":92,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-06-26","data_baixa_br":"26/06/2026","data_retorno":"2026-06-27","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR","ano":"2026","mes_num":6},{"id":93,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-07-01","data_baixa_br":"01/07/2026","data_retorno":"2026-07-02","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR","ano":"2026","mes_num":7},{"id":94,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6425","data_baixa":"2026-04-23","data_baixa_br":"23/04/2026","data_retorno":"2026-04-23","data_retorno_br":"-","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DE FILTRO DE ÓLEO","ano":"2026","mes_num":4},{"id":95,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6425","data_baixa":"2026-06-08","data_baixa_br":"08/06/2026","data_retorno":"2026-06-12","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"SISTEMA HIDRÁULICO COM PANE COM VAZAMENTO ÓLEO HIDRÁULICO","ano":"2026","mes_num":6},{"id":96,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-05-28","data_baixa_br":"28/05/2026","data_retorno":"2026-06-20","data_retorno_br":"-","tempo_indisponivel":23,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR / VIATURA TROCADA","ano":"2026","mes_num":5},{"id":97,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-07-06","data_baixa_br":"06/07/2026","data_retorno":"2026-07-17","data_retorno_br":"-","tempo_indisponivel":11,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DA CAIXA DE ALAVANCAS DA PLATAFORMA","ano":"2026","mes_num":7},{"id":98,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-07-03","data_baixa_br":"03/07/2026","data_retorno":"2026-07-23","data_retorno_br":"-","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"ROTA DO PARÁ","motivo":"PINO DA CABINE QUEBRADO","ano":"2026","mes_num":7},{"id":99,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-06-27","data_baixa_br":"27/06/2026","data_retorno":"2026-11-15","data_retorno_br":"-","tempo_indisponivel":141,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"PORTA DANIFICADA","ano":"2026","mes_num":6},{"id":100,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-07-09","data_baixa_br":"09/07/2026","data_retorno":"2026-07-13","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CRUZETA DO CARDAN QUEBRADA","ano":"2026","mes_num":7},{"id":101,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-07-11","data_baixa_br":"11/07/2026","data_retorno":"2026-07-15","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGATES EM AMBOS PNEUS DE TRAÇÃO","ano":"2026","mes_num":7},{"id":102,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-07-11","data_baixa_br":"11/07/2026","data_retorno":"2026-07-14","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA DO ÓLEO HIDRÁULICO","ano":"2026","mes_num":7},{"id":103,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-07-12","data_baixa_br":"12/07/2026","data_retorno":"2026-07-13","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTES DOS PNEUS","ano":"2026","mes_num":7},{"id":104,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-07-13","data_baixa_br":"13/07/2026","data_retorno":"2026-07-19","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CONEXÃO DA BOMBA COM O TANQUE ROMPIDO","ano":"2026","mes_num":7},{"id":105,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-07-15","data_baixa_br":"15/07/2026","data_retorno":"2026-07-27","data_retorno_br":"-","tempo_indisponivel":12,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS DANIFICADOS E BOMBA DANIFICADA","ano":"2026","mes_num":7},{"id":106,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-07-17","data_baixa_br":"17/07/2026","data_retorno":"2026-07-22","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CABO DA REDUTORA QUEBRADO","ano":"2026","mes_num":7},{"id":107,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-07-20","data_baixa_br":"20/07/2026","data_retorno":"2026-07-29","data_retorno_br":"-","tempo_indisponivel":9,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS","ano":"2026","mes_num":7},{"id":108,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-07-20","data_baixa_br":"20/07/2026","data_retorno":"2026-08-05","data_retorno_br":"-","tempo_indisponivel":16,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"DANOS NO BRAÇO MECÂNICO","ano":"2026","mes_num":7},{"id":109,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-07-25","data_baixa_br":"25/07/2026","data_retorno":"2026-07-27","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS","ano":"2026","mes_num":7},{"id":110,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-07-26","data_baixa_br":"26/07/2026","data_retorno":"2026-07-27","data_retorno_br":"-","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRAS HIDRÁULICAS","ano":"2026","mes_num":7},{"id":111,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-07-30","data_baixa_br":"30/07/2026","data_retorno":"2026-08-04","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE OLEO HIDRÁULICO","ano":"2026","mes_num":7},{"id":112,"bso":"BS-03","viatura":"IT-03","placa":"TEI1I95","data_baixa":"2026-07-31","data_baixa_br":"31/07/2026","data_retorno":"NÃO RETORN","data_retorno_br":"-","tempo_indisponivel":0,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"POSSIVELMENTE O VEÍCULO SERÁ SUBSTÍTUIDO","ano":"2026","mes_num":7},{"id":113,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-08-02","data_baixa_br":"02/08/2026","data_retorno":"2026-08-04","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTES DOS PNEUS","ano":"2026","mes_num":8},{"id":114,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-08-03","data_baixa_br":"03/08/2026","data_retorno":"2026-08-07","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTES DOS PNEUS","ano":"2026","mes_num":8},{"id":115,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-08-08","data_baixa_br":"08/08/2026","data_retorno":"2026-08-17","data_retorno_br":"-","tempo_indisponivel":9,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":8},{"id":116,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-08-12","data_baixa_br":"12/08/2026","data_retorno":"2026-08-18","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"DESPRENDIMENTO DE UMA DAS CUÍCAS E PELO ROMPIMENTO DE UM DOS CABOS DO SISTEMA.","ano":"2026","mes_num":8},{"id":117,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-08-10","data_baixa_br":"10/08/2026","data_retorno":"2026-08-12","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PROBLEMAS NOS PNEUS (FURADO) E TROCA DE ÓLEO COM PRAZO DE MANUTENÇÃO VENCIDO.","ano":"2026","mes_num":8},{"id":118,"bso":"BS-03","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-08-15","data_baixa_br":"15/08/2026","data_retorno":"2026-08-27","data_retorno_br":"-","tempo_indisponivel":12,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS FURADOS","ano":"2026","mes_num":8},{"id":119,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-08-18","data_baixa_br":"18/08/2026","data_retorno":"2026-09-01","data_retorno_br":"-","tempo_indisponivel":14,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS DIANTEIROS GASTOS","ano":"2026","mes_num":8},{"id":120,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-08-20","data_baixa_br":"20/08/2026","data_retorno":"2026-08-25","data_retorno_br":"-","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"GASES DO ESCAPAMENTO ESTAVAM SENDO DIRECIONADOS PARA O INTERIOR DA CABINE","ano":"2026","mes_num":8},{"id":121,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-08-21","data_baixa_br":"21/08/2026","data_retorno":"2026-09-10","data_retorno_br":"-","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NA CUICA DE FREIO E ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":8},{"id":122,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-08-25","data_baixa_br":"25/08/2026","data_retorno":"2026-08-31","data_retorno_br":"-","tempo_indisponivel":6,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"NO DIA 28/08 O SUP. LÉO KYDRON INFORMOU QUE O VEÍCULO SERIA SUBSTITUIDO","ano":"2026","mes_num":8},{"id":123,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-09-02","data_baixa_br":"02/09/2026","data_retorno":"2026-09-15","data_retorno_br":"-","tempo_indisponivel":13,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"NÃO INFORMADO","ano":"2026","mes_num":9},{"id":124,"bso":"BS-03","viatura":"CP-03","placa":"SRR1I60","data_baixa":"2026-09-15","data_baixa_br":"15/09/2026","data_retorno":"2026-09-18","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO INFORMADO","ano":"2026","mes_num":9},{"id":125,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-09-14","data_baixa_br":"14/09/2026","data_retorno":"2026-09-16","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA ESTOURADA","ano":"2026","mes_num":9},{"id":126,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-08-30","data_baixa_br":"30/08/2026","data_retorno":"2026-09-07","data_retorno_br":"-","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"ROTA DO PARÁ","motivo":"PROBLEMA ELETRICO NA PRANCHA","ano":"2026","mes_num":8},{"id":127,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-09-17","data_baixa_br":"17/09/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":70,"status":"EM BAIXA","tipo_baixa":"PANE ELÉTRICA","locadora":"ROTA DO PARÁ","motivo":"NÃO ESTÁ ACIONANDO A PARTIDA","ano":"2026","mes_num":9},{"id":128,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-09-06","data_baixa_br":"06/09/2026","data_retorno":"2026-09-08","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CAIXA DE MARCHA","ano":"2026","mes_num":9},{"id":129,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6A25","data_baixa":"2026-09-01","data_baixa_br":"01/09/2026","data_retorno":"2026-09-04","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO","ano":"2026","mes_num":9},{"id":130,"bso":"BS-02","viatura":"IT-02","placa":"RNK1H96","data_baixa":"2026-09-06","data_baixa_br":"06/09/2026","data_retorno":"2026-09-08","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ALTERNADOR DANIFICADO","ano":"2026","mes_num":9},{"id":131,"bso":"BS-02","viatura":"IT-02","placa":"RNK1H96","data_baixa":"2026-09-22","data_baixa_br":"22/09/2026","data_retorno":"2026-09-25","data_retorno_br":"-","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"ESTÁ DESLIGANDO SOZINHO","ano":"2026","mes_num":9},{"id":132,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-09-24","data_baixa_br":"24/09/2026","data_retorno":"2026-10-11","data_retorno_br":"-","tempo_indisponivel":17,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ROMPIMENTO DA MANGUEIRA, PNEUS GASTOS","ano":"2026","mes_num":9},{"id":133,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-09-24","data_baixa_br":"24/09/2026","data_retorno":"2026-09-26","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"LÂMPADAS E GIROFELX QUEIMADOS","ano":"2026","mes_num":9},{"id":134,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-09-27","data_baixa_br":"27/09/2026","data_retorno":"2026-09-29","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"TOMADA DE FORÇA","ano":"2026","mes_num":9},{"id":135,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-10-04","data_baixa_br":"04/10/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":53,"status":"EM BAIXA","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELETRICA NA PARTIDA","ano":"2026","mes_num":10},{"id":136,"bso":"BS-05","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-10-01","data_baixa_br":"01/10/2026","data_retorno":"2026-11-06","data_retorno_br":"-","tempo_indisponivel":36,"status":"DISPONÍVEL","tipo_baixa":"DANOS A LATARIA","locadora":"GRUPO PINHO","motivo":"TROCA DO PARABRISA","ano":"2026","mes_num":10},{"id":137,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-10-07","data_baixa_br":"07/10/2026","data_retorno":"2026-10-17","data_retorno_br":"-","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"RESERVATORIO DE ÁGUA DANIFICADO","ano":"2026","mes_num":10},{"id":138,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-10-09","data_baixa_br":"09/10/2026","data_retorno":"2026-10-15","data_retorno_br":"-","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS E DANIFICADOS","ano":"2026","mes_num":10},{"id":139,"bso":"BS-03","viatura":"CP-03","placa":"SRR1I60","data_baixa":"2026-10-11","data_baixa_br":"11/10/2026","data_retorno":"2026-10-13","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CARDAN DA BOMBA QUEBRADO","ano":"2026","mes_num":10},{"id":140,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6A25","data_baixa":"2026-10-15","data_baixa_br":"15/10/2026","data_retorno":"2026-10-23","data_retorno_br":"-","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO HIDRÁULICO","ano":"2026","mes_num":10},{"id":141,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-10-17","data_baixa_br":"17/10/2026","data_retorno":"2026-11-06","data_retorno_br":"-","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO INFORMADO","ano":"2026","mes_num":10},{"id":142,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-10-17","data_baixa_br":"17/10/2026","data_retorno":"2026-10-27","data_retorno_br":"-","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA DANIFICADA","ano":"2026","mes_num":10},{"id":143,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-10-21","data_baixa_br":"21/10/2026","data_retorno":"2026-11-06","data_retorno_br":"-","tempo_indisponivel":16,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":10},{"id":144,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-11-03","data_baixa_br":"03/11/2026","data_retorno":"2026-11-07","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELETRICA","ano":"2026","mes_num":11},{"id":145,"bso":"BS-03","viatura":"CP-03","placa":"SRR1I60","data_baixa":"2026-11-03","data_baixa_br":"03/11/2026","data_retorno":"2026-11-07","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NOS FREIOS","ano":"2026","mes_num":11},{"id":146,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-11-04","data_baixa_br":"04/11/2026","data_retorno":"2026-11-19","data_retorno_br":"-","tempo_indisponivel":15,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"RADIADOR FURADO","ano":"2026","mes_num":11},{"id":147,"bso":"BS-04","viatura":"CM-04","placa":"RIR3F12","data_baixa":"2026-11-05","data_baixa_br":"05/11/2026","data_retorno":"2026-11-07","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO DOS FAROIS, ESTROBOS.","ano":"2026","mes_num":11},{"id":148,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-11-05","data_baixa_br":"05/11/2026","data_retorno":"2026-11-07","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ROLAMENTO DIANTEIRO DANIFICADO","ano":"2026","mes_num":11},{"id":149,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6A25","data_baixa":"2026-11-13","data_baixa_br":"13/11/2026","data_retorno":"2026-11-17","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO","ano":"2026","mes_num":11},{"id":150,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-11-10","data_baixa_br":"10/11/2026","data_retorno":"2026-11-14","data_retorno_br":"-","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":11},{"id":151,"bso":"BS-04","viatura":"GP-04","placa":"FVH9J63","data_baixa":"2026-11-14","data_baixa_br":"14/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":12,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"FALHA NO SISTEMA DE TRANSMISSÃO","ano":"2026","mes_num":11},{"id":152,"bso":"BS-05","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-11-14","data_baixa_br":"14/11/2026","data_retorno":"2026-11-16","data_retorno_br":"-","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":11},{"id":153,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-11-16","data_baixa_br":"16/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":10,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA MANGUEIRA / VTR SOMENTE PARA SINALIZAÇÃO","ano":"2026","mes_num":11},{"id":154,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-11-17","data_baixa_br":"17/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":9,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VTR NÃO ACIONA PARTIDA","ano":"2026","mes_num":11},{"id":155,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-11-24","data_baixa_br":"24/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":2,"status":"EM BAIXA","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"TROCA DE ÓLEO","ano":"2026","mes_num":11},{"id":156,"bso":"BS-04","viatura":"CM-04","placa":"RIR3F12","data_baixa":"2026-11-24","data_baixa_br":"24/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":2,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NA REDUTORA","ano":"2026","mes_num":11},{"id":157,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-11-24","data_baixa_br":"24/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":2,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DO RETENTOR","ano":"2026","mes_num":11}];
-    let FROTA_DATA = [{"placa":"EQS2I86","marca":"MERCEDES-BENZ REVESCAP AMB SR - 2022","cc":"-","area":"AMBULÂNCIA/RESGATE","locadora":"ENSEG","prefixo":"AC-06R","base":"BS-01","status":"ATIVADO"},{"placa":"TKW6D78","marca":"RENAULT/MASTER JI MO AMB - 2025/2026","cc":"C07001","area":"AMBULÂNCIA/RESGATE","locadora":"ENSEG","prefixo":"AC-01","base":"BS-01","status":"ATIVADO"},{"placa":"TJX0D38","marca":"RENAULT/MASTER JI MO AMB - 2025/2026","cc":"C07004","area":"AMBULÂNCIA/RESGATE","locadora":"ENSEG","prefixo":"AC-04","base":"BS-04","status":"ATIVADO"},{"placa":"TIQ6I28","marca":"RENAULT/MASTER JI MO AMB - 2026","cc":"C07005","area":"AMBULÂNCIA/RESGATE","locadora":"ENSEG","prefixo":"AC-05","base":"BS-05","status":"ATIVADO"},{"placa":"TKB5F38","marca":"RENAULT/MASTER JI MO AMB - 2025/2026","cc":"C07002","area":"AMBULÂNCIA/RESGATE","locadora":"ENSEG","prefixo":"AC-02","base":"BS-02","status":"ATIVADO"},{"placa":"TLW0A72","marca":"RENAULT/MASTER PRO L3 - 2025/2026","cc":"C07003","area":"AMBULÂNCIA/RESGATE","locadora":"ENSEG","prefixo":"AC-03","base":"BS-03","status":"ATIVADO"},{"placa":"TTG3E31","marca":"VW/27.260 CRM 6X4 - 2025","cc":"C07001","area":"CAMINHAO MULTIUSO C/MUNCK","locadora":"GRUPO PINHO","prefixo":"CM-01","base":"BS-01","status":"ATIVADO"},{"placa":"RIV7C97","marca":"VW/17.190 CRM 4X2 ROB - 2023","cc":"C07001","area":"CAMINHÃO PIPA","locadora":"GRUPO PINHO","prefixo":"CP-01","base":"BS-01","status":"ATIVADO"},{"placa":"RKE0C46","marca":"VW/9.170 DRC 4X2 - 2020","cc":"C07001","area":"GUINCHO LEVE","locadora":"GRUPO PINHO","prefixo":"GL-01","base":"BS-01","status":"ATIVADO"},{"placa":"LUM6A25","marca":"SCANIA G450 B6X4 XT - 2020","cc":"C07001","area":"GUINCHO PESADO","locadora":"GRUPO PINHO","prefixo":"GP-03R","base":"BS-01","status":"ATIVADO"},{"placa":"SZM5D32","marca":"TOYOTA HILUX CD - 2024","cc":"C07001","area":"INSPEÇÃO","locadora":"GRUPO PINHO","prefixo":"IT-01","base":"BS-01","status":"ATIVADO"},{"placa":"TUT0I70","marca":"VW/DELIVERY 11.180 - 2025","cc":"C07002","area":"CAMINHAO MULTIUSO S/MUNCK","locadora":"GRUPO PINHO","prefixo":"CM-02","base":"BS-02","status":"ATIVADO"},{"placa":"RJF7H49","marca":"VW/17.190 CRM 4X2 ROB - 2023","cc":"C07002","area":"CAMINHÃO PIPA","locadora":"GRUPO PINHO","prefixo":"CP-02","base":"BS-02","status":"ATIVADO"},{"placa":"EZN7D66","marca":"DAF XF105 FTT 510A - 2020","cc":"C07002","area":"GUINCHO PESADO","locadora":"GRUPO PINHO","prefixo":"GP-02","base":"BS-02","status":"ATIVADO"},{"placa":"RNK1H96","marca":"CHEVROLET S10 - 2024","cc":"C07002","area":"INSPEÇÃO","locadora":"GRUPO PINHO","prefixo":"IT-02","base":"BS-02","status":"ATIVADO"},{"placa":"CUL6H20","marca":"VW/9.170 DRC 4X2 - 2020","cc":"C07002","area":"GUINCHO LEVE","locadora":"ROTA DO PARA","prefixo":"GL-02","base":"BS-02","status":"ATIVADO"},{"placa":"RIT2F23","marca":"M. BENZ ATEGO 2426 - 2020","cc":"C07003","area":"CAMINHÃO MULTIUSO C/MUNCK","locadora":"GRUPO PINHO","prefixo":"CM-03","base":"BS-03","status":"ATIVADO"},{"placa":"SRR1I60","marca":"VW 17.230 4X2 - 2023","cc":"C07003","area":"CAMINHÃO PIPA","locadora":"GRUPO PINHO","prefixo":"CP-03","base":"BS-03","status":"ATIVADO"},{"placa":"SRQ5A66","marca":"VW 9.180 DELIVERY - 2025","cc":"C07003","area":"GUINCHO LEVE","locadora":"GRUPO PINHO","prefixo":"GL-03","base":"BS-03","status":"ATIVADO"},{"placa":"FLA9I65","marca":"VW 31.390 6X4 CRC - 2018","cc":"C07004","area":"GUINCHO PESADO","locadora":"GRUPO PINHO","prefixo":"GP-01","base":"BS-01","status":"DESATIVADO"},{"placa":"RJK7E10","marca":"TOYOTA HILUX CD - 2022","cc":"C07003","area":"INSPEÇÃO","locadora":"GRUPO PINHO","prefixo":"IT-03","base":"BS-03","status":"ATIVADO"},{"placa":"RIR3F12","marca":"VW/9.170 DRC 4X2","cc":"C07004","area":"CAMINHAO MULTIUSO S/MUNCK","locadora":"GRUPO PINHO","prefixo":"CM-04","base":"BS-04","status":"ATIVADO"},{"placa":"RJS7E06","marca":"VW/17.190 CRM 4X2 ROB - 2023","cc":"C07004","area":"CAMINHÃO PIPA","locadora":"GRUPO PINHO","prefixo":"CP-04","base":"BS-04","status":"ATIVADO"},{"placa":"SRR0F96","marca":"VW DELIVERY 9.180 - 2025","cc":"C07004","area":"GUINCHO LEVE","locadora":"GRUPO PINHO","prefixo":"GL-04","base":"BS-04","status":"ATIVADO"},{"placa":"FVH9J63","marca":"VW/32.360 CRC 6X4","cc":"C07004","area":"GUINCHO PESADO","locadora":"GRUPO PINHO","prefixo":"GP-04","base":"BS-04","status":"ATIVADO"},{"placa":"SZM5D42","marca":"TOYOTA HILUX CD - 2024","cc":"C07004","area":"INSPEÇÃO","locadora":"GRUPO PINHO","prefixo":"IT-04","base":"BS-04","status":"ATIVADO"},{"placa":"TUS0G74","marca":"VW 18.260 CRM 4X2 - 2025","cc":"C07005","area":"CAMINHÃO MULTIUSO C/MUNCK","locadora":"GRUPO PINHO","prefixo":"CM-05","base":"BS-05","status":"ATIVADO"},{"placa":"RKD9A48","marca":"VW/17.190 CRM 4X2 ROB - 2023","cc":"C07005","area":"CAMINHÃO PIPA","locadora":"GRUPO PINHO","prefixo":"CP-05","base":"BS-05","status":"ATIVADO"},{"placa":"LUA6J40","marca":"M. BENZ ACCELO 1016 - 2023","cc":"C07005","area":"GUINCHO LEVE","locadora":"GRUPO PINHO","prefixo":"GL-05","base":"BS-05","status":"ATIVADO"},{"placa":"SZM5D22","marca":"TOYOTA HILUX CD - 2024","cc":"C07005","area":"INSPEÇÃO","locadora":"GRUPO PINHO","prefixo":"IT-05","base":"BS-05","status":"ATIVADO"},{"placa":"TTC1F52","marca":"SAVEIRO CS - 2025","cc":"-","area":"INSPEÇÃO RESERVA","locadora":"GRUPO PINHO","prefixo":"IT-06R","base":"BS-05","status":"ATIVADO"},{"placa":"TZH1I98","marca":"STRADA FREEDOM CD13 - 2026","cc":"C04002","area":"GER. OPERAÇÕES","locadora":"MOVIDA","prefixo":"C-02","base":"BS-01","status":"ATIVADO"},{"placa":"UVU3H91","marca":"FIAT STRADA","cc":"C04002","area":"GER. OPERAÇÕES","locadora":"MOVIDA","prefixo":"G-01","base":"BS-01","status":"ATIVADO"},{"placa":"UCR7G53","marca":"HB20","cc":"C04002","area":"GER. OPERAÇÕES","locadora":"MOVIDA","prefixo":"S-01","base":"BS-01","status":"ATIVADO"},{"placa":"UCQ2B08","marca":"HB20","cc":"C04002","area":"GER. OPERAÇÕES","locadora":"MOVIDA","prefixo":"S-02","base":"BS-01","status":"ATIVADO"},{"placa":"TIS2F95","marca":"SAVEIRO CD RB MF - 2025/2026","cc":"C04002","area":"GER. OPERAÇÕES","locadora":"MOVIDA","prefixo":"S-03","base":"BS-01","status":"ATIVADO"},{"placa":"UCQ2B16","marca":"HB20","cc":"C04002","area":"GER. OPERAÇÕES","locadora":"MOVIDA","prefixo":"S-04","base":"BS-01","status":"ATIVADO"},{"placa":"BHX5B38","marca":"IVECO/STRALIS 800S44TZ - 2019","cc":"C07002","area":"GUINCHO PESADO","locadora":"ROTA DO PARA","prefixo":"GP-02R","base":"BAIXADO","status":"DESATIVADO"},{"placa":"ELI3A79","marca":"IVECO/STRALIS 800S44TZ - 2019","cc":"C07002","area":"GUINCHO PESADO","locadora":"ROTA DO PARA","prefixo":"GP-04R","base":"BAIXADO","status":"DESATIVADO"},{"placa":"BWM4C95","marca":"VW 9.170 DRC 4X2 - 2019","cc":"C07005","area":"GUINCHO LEVE","locadora":"ROTA DO PARA","prefixo":"s/ plotagem","base":"BAIXADO","status":"DESATIVADO"}];
+    let RAW_DATA = [{"id":1,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2025-09-12","data_baixa_br":"12/09/2025","data_retorno":"2026-01-16","data_retorno_br":"16/01/2026","tempo_indisponivel":126,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO NA CAIXA DE MARCHA","ano":"2025","mes_num":9},{"id":2,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2026-01-30","data_baixa_br":"30/01/2026","data_retorno":"2026-02-04","data_retorno_br":"04/02/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NO MUNCK","ano":"2026","mes_num":1},{"id":3,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2026-03-18","data_baixa_br":"18/03/2026","data_retorno":"2026-04-01","data_retorno_br":"01/04/2026","tempo_indisponivel":14,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":4,"bso":"BS-01","viatura":"CM-01","placa":"TTG3E31","data_baixa":"2026-04-08","data_baixa_br":"08/04/2026","data_retorno":"2026-06-12","data_retorno_br":"12/06/2026","tempo_indisponivel":65,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA ELETRICO","ano":"2026","mes_num":4},{"id":5,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-02-01","data_baixa_br":"01/02/2026","data_retorno":"2026-02-02","data_retorno_br":"02/02/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ESGUICHO DA MANGUEIRA","ano":"2026","mes_num":2},{"id":6,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-04-23","data_baixa_br":"23/04/2026","data_retorno":"2026-04-23","data_retorno_br":"23/04/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"TROCA DE FILTRO DE ÓLEO","ano":"2026","mes_num":4},{"id":7,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-06-13","data_baixa_br":"13/06/2026","data_retorno":"2026-06-18","data_retorno_br":"18/06/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PNEUS EM PÉSSIMAS CONDIÇÕES PRA RODAR","ano":"2026","mes_num":6},{"id":8,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-03-26","data_baixa_br":"26/03/2026","data_retorno":"2026-03-27","data_retorno_br":"27/03/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO ALTERNADOR","ano":"2026","mes_num":3},{"id":9,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-05-19","data_baixa_br":"19/05/2026","data_retorno":"2026-05-19","data_retorno_br":"19/05/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":5},{"id":10,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-06-12","data_baixa_br":"12/06/2026","data_retorno":"2026-06-17","data_retorno_br":"17/06/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"DISCO DE EMBREAGEM","ano":"2026","mes_num":6},{"id":11,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-06-22","data_baixa_br":"22/06/2026","data_retorno":"2026-06-23","data_retorno_br":"23/06/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"PREVENTIVA","ano":"2026","mes_num":6},{"id":12,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-04-22","data_baixa_br":"22/04/2026","data_retorno":"2026-05-02","data_retorno_br":"02/05/2026","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CORREIA DO MOTOR","ano":"2026","mes_num":4},{"id":13,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-05-27","data_baixa_br":"27/05/2026","data_retorno":"2026-05-28","data_retorno_br":"28/05/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"SISTEMA ELÉTRICO","ano":"2026","mes_num":5},{"id":14,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-03-25","data_baixa_br":"25/03/2026","data_retorno":"2026-03-26","data_retorno_br":"26/03/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO ESTÁ FAZENDO REMOÇÃO","ano":"2026","mes_num":3},{"id":15,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-05-15","data_baixa_br":"15/05/2026","data_retorno":"2026-05-21","data_retorno_br":"21/05/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TIROU OS VAZAMENTOS DO SETOR DE DIREÇÃO, FEZ A TROCA DO NÍVEL DE ÓLEO HIDRÁULICO DO TANQUE","ano":"2026","mes_num":5},{"id":16,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-06-15","data_baixa_br":"15/06/2026","data_retorno":"2026-06-18","data_retorno_br":"18/06/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS EM PÉSSIMAS CONDIÇÕES PARA RODAR","ano":"2026","mes_num":6},{"id":17,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-01-27","data_baixa_br":"27/01/2026","data_retorno":"2026-02-03","data_retorno_br":"03/02/2026","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"AVARIA DURANTE OCORRÊNCIA","ano":"2026","mes_num":1},{"id":18,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-02-07","data_baixa_br":"07/02/2026","data_retorno":"2026-02-27","data_retorno_br":"27/02/2026","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"BATERIA RETIRADA E COLOCADA NO GL-02","ano":"2026","mes_num":2},{"id":19,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-03-10","data_baixa_br":"10/03/2026","data_retorno":"2026-03-23","data_retorno_br":"23/03/2026","tempo_indisponivel":13,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CABO DA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":20,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-04-29","data_baixa_br":"29/04/2026","data_retorno":"2026-04-29","data_retorno_br":"29/04/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"FALTA DE LUBRIFICAÇÃO NO CARDÃ, TROCA DO VIDRO DA JANELA DIRETA E RETROVISOR DO LADO DO MOTORISTA","ano":"2026","mes_num":4},{"id":21,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-05-24","data_baixa_br":"24/05/2026","data_retorno":"2026-06-24","data_retorno_br":"24/06/2026","tempo_indisponivel":31,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DA BOMBA DE ÁGUA","ano":"2026","mes_num":5},{"id":22,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2025-12-26","data_baixa_br":"26/12/2025","data_retorno":"2026-01-03","data_retorno_br":"03/01/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"ROTA DO PARÁ","motivo":"PNEUS DESGASTADOS","ano":"2025","mes_num":12},{"id":23,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-03-17","data_baixa_br":"17/03/2026","data_retorno":"2026-05-25","data_retorno_br":"25/05/2026","tempo_indisponivel":69,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"ROTA DO PARÁ","motivo":"ALINHAMENTO, TROCA DOS PNEUS E CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":24,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-03-07","data_baixa_br":"07/03/2026","data_retorno":"2026-03-10","data_retorno_br":"10/03/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA  MARCHA E VAZAMENTO DE ÓLEO","ano":"2026","mes_num":3},{"id":25,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-03-22","data_baixa_br":"22/03/2026","data_retorno":"2026-03-25","data_retorno_br":"25/03/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":26,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-04-08","data_baixa_br":"08/04/2026","data_retorno":"2026-04-17","data_retorno_br":"17/04/2026","tempo_indisponivel":9,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA LANÇA","ano":"2026","mes_num":4},{"id":27,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-01-30","data_baixa_br":"30/01/2026","data_retorno":"2026-02-04","data_retorno_br":"04/02/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DE ÓLEO E PNEUS","ano":"2026","mes_num":1},{"id":28,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-03-01","data_baixa_br":"01/03/2026","data_retorno":"2026-03-04","data_retorno_br":"04/03/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"GIROFLEX E VIDROS COM PROBLEMA.","ano":"2026","mes_num":3},{"id":29,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-03-11","data_baixa_br":"11/03/2026","data_retorno":"2026-04-07","data_retorno_br":"07/04/2026","tempo_indisponivel":27,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"VEÍCULO TROCADO","ano":"2026","mes_num":3},{"id":30,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-14","data_retorno_br":"14/05/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DE ÓLEO","ano":"2026","mes_num":5},{"id":31,"bso":"BS-02","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-03-26","data_baixa_br":"26/03/2026","data_retorno":"2026-03-26","data_retorno_br":"26/03/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO SISTEMA DE ARREFECIMENTO / TURNO DIURNO BAIXADO","ano":"2026","mes_num":3},{"id":32,"bso":"BS-02","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-04-12","data_baixa_br":"12/04/2026","data_retorno":"2026-04-22","data_retorno_br":"22/04/2026","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"AQUECIMENTO - PROBLEMAS DE AQUECIMENTO","ano":"2026","mes_num":4},{"id":33,"bso":"BS-02","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-05-08","data_baixa_br":"08/05/2026","data_retorno":"2026-05-20","data_retorno_br":"20/05/2026","tempo_indisponivel":12,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS","ano":"2026","mes_num":5},{"id":34,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-01-25","data_baixa_br":"25/01/2026","data_retorno":"2026-01-30","data_retorno_br":"30/01/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA BATERIA","ano":"2026","mes_num":1},{"id":35,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-03-11","data_baixa_br":"11/03/2026","data_retorno":"2026-03-17","data_retorno_br":"17/03/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO FAZ REMOÇÃO, PROBLEMA NA REDUTORA","ano":"2026","mes_num":3},{"id":36,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-03-25","data_baixa_br":"25/03/2026","data_retorno":"2026-03-26","data_retorno_br":"26/03/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PARCIALMENTE BAIXADO, PNEUS GASTOS E RETROVISOR QUEBRADO","ano":"2026","mes_num":3},{"id":37,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-04-14","data_baixa_br":"14/04/2026","data_retorno":"2026-04-15","data_retorno_br":"15/04/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTE DO PNEU E REDUTORA","ano":"2026","mes_num":4},{"id":38,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-05-20","data_baixa_br":"20/05/2026","data_retorno":"2026-05-21","data_retorno_br":"21/05/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":5},{"id":39,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-06-17","data_baixa_br":"17/06/2026","data_retorno":"2026-06-22","data_retorno_br":"22/06/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"PREVENTIVA","ano":"2026","mes_num":6},{"id":40,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-04-18","data_baixa_br":"18/04/2026","data_retorno":"2026-05-15","data_retorno_br":"15/05/2026","tempo_indisponivel":27,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA FORÇA","ano":"2026","mes_num":4},{"id":41,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-05-28","data_baixa_br":"28/05/2026","data_retorno":"2026-06-03","data_retorno_br":"03/06/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CARDAM QUEBROU","ano":"2026","mes_num":5},{"id":42,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-06-11","data_baixa_br":"11/06/2026","data_retorno":"2026-06-11","data_retorno_br":"11/06/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"SISTEMA HIDRÁULICO COM PANE ( ALGUMAS JUNTAS ESTAVAM MAU APERTADAS)","ano":"2026","mes_num":6},{"id":43,"bso":"BS-03","viatura":"CP-03","placa":"SRR1L60","data_baixa":"2026-01-29","data_baixa_br":"29/01/2026","data_retorno":"2026-02-03","data_retorno_br":"03/02/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO SISTEMA DE FREIO","ano":"2026","mes_num":1},{"id":44,"bso":"BS-03","viatura":"IT-03","placa":"TCE8F28","data_baixa":"2025-09-12","data_baixa_br":"12/09/2025","data_retorno":"2026-01-11","data_retorno_br":"11/01/2026","tempo_indisponivel":121,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO NA CAIXA DE MARCHA","ano":"2025","mes_num":9},{"id":45,"bso":"BS-03","viatura":"IT-03","placa":"TCE8F28","data_baixa":"2026-02-25","data_baixa_br":"25/02/2026","data_retorno":"2026-02-27","data_retorno_br":"27/02/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO NA CAIXA DE MARCHA","ano":"2026","mes_num":2},{"id":46,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-03-11","data_baixa_br":"11/03/2026","data_retorno":"2026-04-17","data_retorno_br":"17/04/2026","tempo_indisponivel":37,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":3},{"id":47,"bso":"BS-03","viatura":"IT-03","placa":"TCE8F28","data_baixa":"2026-05-13","data_baixa_br":"13/05/2026","data_retorno":"2026-05-15","data_retorno_br":"15/05/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CAIXA DE MARCHA","ano":"2026","mes_num":5},{"id":48,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-03-19","data_baixa_br":"19/03/2026","data_retorno":"2026-03-23","data_retorno_br":"23/03/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NOS FREIOS TRASEIRO","ano":"2026","mes_num":3},{"id":49,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-04-13","data_baixa_br":"13/04/2026","data_retorno":"2026-04-20","data_retorno_br":"20/04/2026","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA EMBREAGEM","ano":"2026","mes_num":4},{"id":50,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-04-21","data_baixa_br":"21/04/2026","data_retorno":"2026-05-14","data_retorno_br":"14/05/2026","tempo_indisponivel":23,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA EMBREAGEM","ano":"2026","mes_num":4},{"id":51,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-16","data_retorno_br":"16/05/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA MANGUEIRA HIDRÁULICA","ano":"2026","mes_num":5},{"id":52,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-01-10","data_baixa_br":"10/01/2026","data_retorno":"2026-01-16","data_retorno_br":"16/01/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"SOLDA NO TANQUE DE COMBUSTÍVEL","ano":"2026","mes_num":1},{"id":53,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-02-09","data_baixa_br":"09/02/2026","data_retorno":"2026-04-09","data_retorno_br":"09/04/2026","tempo_indisponivel":59,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TOMADA DE FORÇA","ano":"2026","mes_num":2},{"id":54,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-05-25","data_baixa_br":"25/05/2026","data_retorno":"2026-05-25","data_retorno_br":"25/05/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NOS FILTROS","ano":"2026","mes_num":5},{"id":55,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-01-02","data_baixa_br":"02/01/2026","data_retorno":"2026-01-03","data_retorno_br":"03/01/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR","ano":"2026","mes_num":1},{"id":56,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-02-03","data_baixa_br":"03/02/2026","data_retorno":"2026-02-21","data_retorno_br":"21/02/2026","tempo_indisponivel":18,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE DIREÇÃO","ano":"2026","mes_num":2},{"id":57,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-03-27","data_baixa_br":"27/03/2026","data_retorno":"2026-03-27","data_retorno_br":"27/03/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO DA CAIXA DE DIREÇÃO","ano":"2026","mes_num":3},{"id":58,"bso":"BS-04","viatura":"GP-03","placa":"FDP5C18","data_baixa":"2026-02-14","data_baixa_br":"14/02/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":0,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"PROBLEMA NO MOTOR","ano":"2026","mes_num":2},{"id":59,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-01-25","data_baixa_br":"25/01/2026","data_retorno":"2026-01-26","data_retorno_br":"26/01/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PROBLEMA NAS RODAS","ano":"2026","mes_num":1},{"id":60,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-02-28","data_baixa_br":"28/02/2026","data_retorno":"2026-03-06","data_retorno_br":"06/03/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":2},{"id":61,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-03-13","data_baixa_br":"13/03/2026","data_retorno":"2026-03-18","data_retorno_br":"18/03/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO NA BOMBA HIDRÁULICA","ano":"2026","mes_num":3},{"id":62,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-03-23","data_baixa_br":"23/03/2026","data_retorno":"2026-03-31","data_retorno_br":"31/03/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA TOMADA DE FORÇA","ano":"2026","mes_num":3},{"id":63,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-03-31","data_baixa_br":"31/03/2026","data_retorno":"2026-04-06","data_retorno_br":"06/04/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA LANÇA","ano":"2026","mes_num":3},{"id":64,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-04-08","data_baixa_br":"08/04/2026","data_retorno":"2026-04-08","data_retorno_br":"08/04/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO HIDRAULICO","ano":"2026","mes_num":4},{"id":65,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-15","data_retorno_br":"15/05/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTRICA","ano":"2026","mes_num":5},{"id":66,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-05-19","data_baixa_br":"19/05/2026","data_retorno":"2026-05-19","data_retorno_br":"19/05/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TAMPA DO FILTRO SOLTOU","ano":"2026","mes_num":5},{"id":67,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-05-24","data_baixa_br":"24/05/2026","data_retorno":"2026-05-25","data_retorno_br":"25/05/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NAS CUÍCAS DE FREIOS","ano":"2026","mes_num":5},{"id":68,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-06-09","data_baixa_br":"09/06/2026","data_retorno":"2026-06-17","data_retorno_br":"17/06/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"BOMBA DE ÁGUA","ano":"2026","mes_num":6},{"id":69,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-01-16","data_baixa_br":"16/01/2026","data_retorno":"2026-01-17","data_retorno_br":"17/01/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":70,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-01-26","data_baixa_br":"26/01/2026","data_retorno":"2026-01-27","data_retorno_br":"27/01/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":71,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-02-19","data_baixa_br":"19/02/2026","data_retorno":"2026-02-21","data_retorno_br":"21/02/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":2},{"id":72,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2025-12-16","data_baixa_br":"16/12/2025","data_retorno":"2026-01-11","data_retorno_br":"11/01/2026","tempo_indisponivel":26,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"TANQUE DE COMBUSTÍVEL FURADO / A VIATURA FOI TROCADA","ano":"2025","mes_num":12},{"id":73,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-01-18","data_baixa_br":"18/01/2026","data_retorno":"2026-02-12","data_retorno_br":"12/02/2026","tempo_indisponivel":25,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTICA","ano":"2026","mes_num":1},{"id":74,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-03-21","data_baixa_br":"21/03/2026","data_retorno":"2026-03-25","data_retorno_br":"25/03/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CERVO DA EMBREGAEM","ano":"2026","mes_num":3},{"id":75,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-01-01","data_baixa_br":"01/01/2026","data_retorno":"2026-01-04","data_retorno_br":"04/01/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":76,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-01-29","data_baixa_br":"29/01/2026","data_retorno":"2026-01-30","data_retorno_br":"30/01/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":1},{"id":77,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-02-11","data_baixa_br":"11/02/2026","data_retorno":"2026-02-13","data_retorno_br":"13/02/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA EMBREAGEM","ano":"2026","mes_num":2},{"id":78,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-02-20","data_baixa_br":"20/02/2026","data_retorno":"2026-03-11","data_retorno_br":"11/03/2026","tempo_indisponivel":19,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTICA","ano":"2026","mes_num":2},{"id":79,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-04-13","data_baixa_br":"13/04/2026","data_retorno":"2026-04-20","data_retorno_br":"20/04/2026","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS, VAZAMENTO NO MOTOR, AR CONDICIONADO","ano":"2026","mes_num":4},{"id":80,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-05-04","data_baixa_br":"04/05/2026","data_retorno":"2026-05-06","data_retorno_br":"06/05/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PROBLEMAS NO PNEU","ano":"2026","mes_num":5},{"id":81,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-05-12","data_baixa_br":"12/05/2026","data_retorno":"2026-05-20","data_retorno_br":"20/05/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELÉTRICA E PNEUS GASTOS","ano":"2026","mes_num":5},{"id":82,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-15","data_retorno_br":"15/05/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS","ano":"2026","mes_num":5},{"id":83,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-02-12","data_baixa_br":"12/02/2026","data_retorno":"2026-02-13","data_retorno_br":"13/02/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":2},{"id":84,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-03-06","data_baixa_br":"06/03/2026","data_retorno":"2026-03-10","data_retorno_br":"10/03/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CHASSI TRINCADO","ano":"2026","mes_num":3},{"id":85,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-03-10","data_baixa_br":"10/03/2026","data_retorno":"2026-03-31","data_retorno_br":"31/03/2026","tempo_indisponivel":21,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA ELETRICO, FICA BAIXADO NO TURNO NOTURNO","ano":"2026","mes_num":3},{"id":86,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-04-07","data_baixa_br":"07/04/2026","data_retorno":"2026-04-15","data_retorno_br":"15/04/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CAIXA DE CÂMBIO, AR CONDICIONADO, PROBLEMAS ELÉTRICOS","ano":"2026","mes_num":4},{"id":87,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-04-21","data_baixa_br":"21/04/2026","data_retorno":"2026-04-23","data_retorno_br":"23/04/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"REDUTORA","ano":"2026","mes_num":4},{"id":88,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-05-07","data_baixa_br":"07/05/2026","data_retorno":"2026-05-11","data_retorno_br":"11/05/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS E AR CONDICIONADO","ano":"2026","mes_num":5},{"id":89,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-05-21","data_baixa_br":"21/05/2026","data_retorno":"2026-05-23","data_retorno_br":"23/05/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA DA REDUTORA","ano":"2026","mes_num":5},{"id":90,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-05-14","data_baixa_br":"14/05/2026","data_retorno":"2026-05-15","data_retorno_br":"15/05/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PROBLEMAS ELÉTRICOS","ano":"2026","mes_num":5},{"id":91,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-06-10","data_baixa_br":"10/06/2026","data_retorno":"2026-06-17","data_retorno_br":"17/06/2026","tempo_indisponivel":7,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"FILTRO DE ARLA, PERDA DE FORÇA","ano":"2026","mes_num":6},{"id":92,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-06-26","data_baixa_br":"26/06/2026","data_retorno":"2026-06-27","data_retorno_br":"27/06/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR","ano":"2026","mes_num":6},{"id":93,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-07-01","data_baixa_br":"01/07/2026","data_retorno":"2026-07-02","data_retorno_br":"02/07/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR","ano":"2026","mes_num":7},{"id":94,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6425","data_baixa":"2026-04-23","data_baixa_br":"23/04/2026","data_retorno":"2026-04-23","data_retorno_br":"23/04/2026","tempo_indisponivel":0,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DE FILTRO DE ÓLEO","ano":"2026","mes_num":4},{"id":95,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6425","data_baixa":"2026-06-08","data_baixa_br":"08/06/2026","data_retorno":"2026-06-12","data_retorno_br":"12/06/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"SISTEMA HIDRÁULICO COM PANE COM VAZAMENTO ÓLEO HIDRÁULICO","ano":"2026","mes_num":6},{"id":96,"bso":"BS-02","viatura":"IT-02","placa":"SZM5D12","data_baixa":"2026-05-28","data_baixa_br":"28/05/2026","data_retorno":"2026-06-20","data_retorno_br":"20/06/2026","tempo_indisponivel":23,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"PERDA DE FORÇA NO MOTOR / VIATURA TROCADA","ano":"2026","mes_num":5},{"id":97,"bso":"BS-02","viatura":"CM-02","placa":"TUT0I70","data_baixa":"2026-07-06","data_baixa_br":"06/07/2026","data_retorno":"2026-07-17","data_retorno_br":"17/07/2026","tempo_indisponivel":11,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DA CAIXA DE ALAVANCAS DA PLATAFORMA","ano":"2026","mes_num":7},{"id":98,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-07-03","data_baixa_br":"03/07/2026","data_retorno":"2026-07-23","data_retorno_br":"23/07/2026","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"ROTA DO PARÁ","motivo":"PINO DA CABINE QUEBRADO","ano":"2026","mes_num":7},{"id":99,"bso":"BS-04","viatura":"GP-01","placa":"FLA9I65","data_baixa":"2026-06-27","data_baixa_br":"27/06/2026","data_retorno":"2026-11-15","data_retorno_br":"15/11/2026","tempo_indisponivel":141,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"PORTA DANIFICADA","ano":"2026","mes_num":6},{"id":100,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-07-09","data_baixa_br":"09/07/2026","data_retorno":"2026-07-13","data_retorno_br":"13/07/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CRUZETA DO CARDAN QUEBRADA","ano":"2026","mes_num":7},{"id":101,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-07-11","data_baixa_br":"11/07/2026","data_retorno":"2026-07-15","data_retorno_br":"15/07/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGATES EM AMBOS PNEUS DE TRAÇÃO","ano":"2026","mes_num":7},{"id":102,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-07-11","data_baixa_br":"11/07/2026","data_retorno":"2026-07-14","data_retorno_br":"14/07/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA DO ÓLEO HIDRÁULICO","ano":"2026","mes_num":7},{"id":103,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-07-12","data_baixa_br":"12/07/2026","data_retorno":"2026-07-13","data_retorno_br":"13/07/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTES DOS PNEUS","ano":"2026","mes_num":7},{"id":104,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-07-13","data_baixa_br":"13/07/2026","data_retorno":"2026-07-19","data_retorno_br":"19/07/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CONEXÃO DA BOMBA COM O TANQUE ROMPIDO","ano":"2026","mes_num":7},{"id":105,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-07-15","data_baixa_br":"15/07/2026","data_retorno":"2026-07-27","data_retorno_br":"27/07/2026","tempo_indisponivel":12,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS DANIFICADOS E BOMBA DANIFICADA","ano":"2026","mes_num":7},{"id":106,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-07-17","data_baixa_br":"17/07/2026","data_retorno":"2026-07-22","data_retorno_br":"22/07/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CABO DA REDUTORA QUEBRADO","ano":"2026","mes_num":7},{"id":107,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-07-20","data_baixa_br":"20/07/2026","data_retorno":"2026-07-29","data_retorno_br":"29/07/2026","tempo_indisponivel":9,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS","ano":"2026","mes_num":7},{"id":108,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-07-20","data_baixa_br":"20/07/2026","data_retorno":"2026-08-05","data_retorno_br":"05/08/2026","tempo_indisponivel":16,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"DANOS NO BRAÇO MECÂNICO","ano":"2026","mes_num":7},{"id":109,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-07-25","data_baixa_br":"25/07/2026","data_retorno":"2026-07-27","data_retorno_br":"27/07/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS","ano":"2026","mes_num":7},{"id":110,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-07-26","data_baixa_br":"26/07/2026","data_retorno":"2026-07-27","data_retorno_br":"27/07/2026","tempo_indisponivel":1,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRAS HIDRÁULICAS","ano":"2026","mes_num":7},{"id":111,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-07-30","data_baixa_br":"30/07/2026","data_retorno":"2026-08-04","data_retorno_br":"04/08/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE OLEO HIDRÁULICO","ano":"2026","mes_num":7},{"id":112,"bso":"BS-03","viatura":"IT-03","placa":"TEI1I95","data_baixa":"2026-07-31","data_baixa_br":"31/07/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":0,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"POSSIVELMENTE O VEÍCULO SERÁ SUBSTÍTUIDO","ano":"2026","mes_num":7},{"id":113,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-08-02","data_baixa_br":"02/08/2026","data_retorno":"2026-08-04","data_retorno_br":"04/08/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTES DOS PNEUS","ano":"2026","mes_num":8},{"id":114,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-08-03","data_baixa_br":"03/08/2026","data_retorno":"2026-08-07","data_retorno_br":"07/08/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"DESGASTES DOS PNEUS","ano":"2026","mes_num":8},{"id":115,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-08-08","data_baixa_br":"08/08/2026","data_retorno":"2026-08-17","data_retorno_br":"17/08/2026","tempo_indisponivel":9,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":8},{"id":116,"bso":"BS-01","viatura":"GL-01","placa":"RKE0C46","data_baixa":"2026-08-12","data_baixa_br":"12/08/2026","data_retorno":"2026-08-18","data_retorno_br":"18/08/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"DESPRENDIMENTO DE UMA DAS CUÍCAS E PELO ROMPIMENTO DE UM DOS CABOS DO SISTEMA.","ano":"2026","mes_num":8},{"id":117,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-08-10","data_baixa_br":"10/08/2026","data_retorno":"2026-08-12","data_retorno_br":"12/08/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PROBLEMAS NOS PNEUS (FURADO) E TROCA DE ÓLEO COM PRAZO DE MANUTENÇÃO VENCIDO.","ano":"2026","mes_num":8},{"id":118,"bso":"BS-03","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-08-15","data_baixa_br":"15/08/2026","data_retorno":"2026-08-27","data_retorno_br":"27/08/2026","tempo_indisponivel":12,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS FURADOS","ano":"2026","mes_num":8},{"id":119,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-08-18","data_baixa_br":"18/08/2026","data_retorno":"2026-09-01","data_retorno_br":"01/09/2026","tempo_indisponivel":14,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS DIANTEIROS GASTOS","ano":"2026","mes_num":8},{"id":120,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-08-20","data_baixa_br":"20/08/2026","data_retorno":"2026-08-25","data_retorno_br":"25/08/2026","tempo_indisponivel":5,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"GASES DO ESCAPAMENTO ESTAVAM SENDO DIRECIONADOS PARA O INTERIOR DA CABINE","ano":"2026","mes_num":8},{"id":121,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-08-21","data_baixa_br":"21/08/2026","data_retorno":"2026-09-10","data_retorno_br":"10/09/2026","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NA CUICA DE FREIO E ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":8},{"id":122,"bso":"BS-04","viatura":"CM-04","placa":"LUG8F45","data_baixa":"2026-08-25","data_baixa_br":"25/08/2026","data_retorno":"2026-08-31","data_retorno_br":"31/08/2026","tempo_indisponivel":6,"status":"DESATIVADO","tipo_baixa":"VEÍCULO SUBSTITUÍDO","locadora":"GRUPO PINHO","motivo":"NO DIA 28/08 O SUP. LÉO KYDRON INFORMOU QUE O VEÍCULO SERIA SUBSTITUIDO","ano":"2026","mes_num":8},{"id":123,"bso":"BS-05","viatura":"CM-05","placa":"TUS0G74","data_baixa":"2026-09-02","data_baixa_br":"02/09/2026","data_retorno":"2026-09-15","data_retorno_br":"15/09/2026","tempo_indisponivel":13,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"NÃO INFORMADO","ano":"2026","mes_num":9},{"id":124,"bso":"BS-03","viatura":"CP-03","placa":"SRR1I60","data_baixa":"2026-09-15","data_baixa_br":"15/09/2026","data_retorno":"2026-09-18","data_retorno_br":"18/09/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO INFORMADO","ano":"2026","mes_num":9},{"id":125,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-09-14","data_baixa_br":"14/09/2026","data_retorno":"2026-09-16","data_retorno_br":"16/09/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA ESTOURADA","ano":"2026","mes_num":9},{"id":126,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-08-30","data_baixa_br":"30/08/2026","data_retorno":"2026-09-07","data_retorno_br":"07/09/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"ROTA DO PARÁ","motivo":"PROBLEMA ELETRICO NA PRANCHA","ano":"2026","mes_num":8},{"id":127,"bso":"BS-02","viatura":"GL-02","placa":"CUL6H20","data_baixa":"2026-09-17","data_baixa_br":"17/09/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":70,"status":"EM BAIXA","tipo_baixa":"PANE ELÉTRICA","locadora":"ROTA DO PARÁ","motivo":"NÃO ESTÁ ACIONANDO A PARTIDA","ano":"2026","mes_num":9},{"id":128,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-09-06","data_baixa_br":"06/09/2026","data_retorno":"2026-09-08","data_retorno_br":"08/09/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CAIXA DE MARCHA","ano":"2026","mes_num":9},{"id":129,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6A25","data_baixa":"2026-09-01","data_baixa_br":"01/09/2026","data_retorno":"2026-09-04","data_retorno_br":"04/09/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO","ano":"2026","mes_num":9},{"id":130,"bso":"BS-02","viatura":"IT-02","placa":"RNK1H96","data_baixa":"2026-09-06","data_baixa_br":"06/09/2026","data_retorno":"2026-09-08","data_retorno_br":"08/09/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ALTERNADOR DANIFICADO","ano":"2026","mes_num":9},{"id":131,"bso":"BS-02","viatura":"IT-02","placa":"RNK1H96","data_baixa":"2026-09-22","data_baixa_br":"22/09/2026","data_retorno":"2026-09-25","data_retorno_br":"25/09/2026","tempo_indisponivel":3,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"ESTÁ DESLIGANDO SOZINHO","ano":"2026","mes_num":9},{"id":132,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-09-24","data_baixa_br":"24/09/2026","data_retorno":"2026-10-11","data_retorno_br":"11/10/2026","tempo_indisponivel":17,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ROMPIMENTO DA MANGUEIRA, PNEUS GASTOS","ano":"2026","mes_num":9},{"id":133,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-09-24","data_baixa_br":"24/09/2026","data_retorno":"2026-09-26","data_retorno_br":"26/09/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"LÂMPADAS E GIROFELX QUEIMADOS","ano":"2026","mes_num":9},{"id":134,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-09-27","data_baixa_br":"27/09/2026","data_retorno":"2026-09-29","data_retorno_br":"29/09/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"TOMADA DE FORÇA","ano":"2026","mes_num":9},{"id":135,"bso":"BS-04","viatura":"IT-04","placa":"SZM5D42","data_baixa":"2026-10-04","data_baixa_br":"04/10/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":53,"status":"EM BAIXA","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELETRICA NA PARTIDA","ano":"2026","mes_num":10},{"id":136,"bso":"BS-05","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-10-01","data_baixa_br":"01/10/2026","data_retorno":"2026-11-06","data_retorno_br":"06/11/2026","tempo_indisponivel":36,"status":"DISPONÍVEL","tipo_baixa":"DANOS A LATARIA","locadora":"GRUPO PINHO","motivo":"TROCA DO PARABRISA","ano":"2026","mes_num":10},{"id":137,"bso":"BS-01","viatura":"CP-01","placa":"RIV7C97","data_baixa":"2026-10-07","data_baixa_br":"07/10/2026","data_retorno":"2026-10-17","data_retorno_br":"17/10/2026","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"RESERVATORIO DE ÁGUA DANIFICADO","ano":"2026","mes_num":10},{"id":138,"bso":"BS-05","viatura":"GL-05","placa":"LUA6J40","data_baixa":"2026-10-09","data_baixa_br":"09/10/2026","data_retorno":"2026-10-15","data_retorno_br":"15/10/2026","tempo_indisponivel":6,"status":"DISPONÍVEL","tipo_baixa":"TROCA DE PNEUS","locadora":"GRUPO PINHO","motivo":"PNEUS GASTOS E DANIFICADOS","ano":"2026","mes_num":10},{"id":139,"bso":"BS-03","viatura":"CP-03","placa":"SRR1I60","data_baixa":"2026-10-11","data_baixa_br":"11/10/2026","data_retorno":"2026-10-13","data_retorno_br":"13/10/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"CARDAN DA BOMBA QUEBRADO","ano":"2026","mes_num":10},{"id":140,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6A25","data_baixa":"2026-10-15","data_baixa_br":"15/10/2026","data_retorno":"2026-10-23","data_retorno_br":"23/10/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO HIDRÁULICO","ano":"2026","mes_num":10},{"id":141,"bso":"BS-02","viatura":"CP-02","placa":"RJF7H49","data_baixa":"2026-10-17","data_baixa_br":"17/10/2026","data_retorno":"2026-11-06","data_retorno_br":"06/11/2026","tempo_indisponivel":20,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"NÃO INFORMADO","ano":"2026","mes_num":10},{"id":142,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-10-17","data_baixa_br":"17/10/2026","data_retorno":"2026-10-27","data_retorno_br":"27/10/2026","tempo_indisponivel":10,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANGUEIRA DANIFICADA","ano":"2026","mes_num":10},{"id":143,"bso":"BS-04","viatura":"GL-04","placa":"SRR0F96","data_baixa":"2026-10-21","data_baixa_br":"21/10/2026","data_retorno":"2026-11-06","data_retorno_br":"06/11/2026","tempo_indisponivel":16,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ALINHAMENTO E BALANCEAMENTO","ano":"2026","mes_num":10},{"id":144,"bso":"BS-04","viatura":"CP-04","placa":"RJS7E06","data_baixa":"2026-11-03","data_baixa_br":"03/11/2026","data_retorno":"2026-11-07","data_retorno_br":"07/11/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"PANE ELETRICA","ano":"2026","mes_num":11},{"id":145,"bso":"BS-03","viatura":"CP-03","placa":"SRR1I60","data_baixa":"2026-11-03","data_baixa_br":"03/11/2026","data_retorno":"2026-11-07","data_retorno_br":"07/11/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NOS FREIOS","ano":"2026","mes_num":11},{"id":146,"bso":"BS-03","viatura":"CM-03","placa":"RIT2F23","data_baixa":"2026-11-04","data_baixa_br":"04/11/2026","data_retorno":"2026-11-19","data_retorno_br":"19/11/2026","tempo_indisponivel":15,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"RADIADOR FURADO","ano":"2026","mes_num":11},{"id":147,"bso":"BS-04","viatura":"CM-04","placa":"RIR3F12","data_baixa":"2026-11-05","data_baixa_br":"05/11/2026","data_retorno":"2026-11-07","data_retorno_br":"07/11/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO DOS FAROIS, ESTROBOS.","ano":"2026","mes_num":11},{"id":148,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-11-05","data_baixa_br":"05/11/2026","data_retorno":"2026-11-07","data_retorno_br":"07/11/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"ROLAMENTO DIANTEIRO DANIFICADO","ano":"2026","mes_num":11},{"id":149,"bso":"BS-01","viatura":"GP-03R","placa":"LUM6A25","data_baixa":"2026-11-13","data_baixa_br":"13/11/2026","data_retorno":"2026-11-17","data_retorno_br":"17/11/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VAZAMENTO DE ÓLEO","ano":"2026","mes_num":11},{"id":150,"bso":"BS-03","viatura":"GL-03","placa":"SRQ5A66","data_baixa":"2026-11-10","data_baixa_br":"10/11/2026","data_retorno":"2026-11-14","data_retorno_br":"14/11/2026","tempo_indisponivel":4,"status":"DISPONÍVEL","tipo_baixa":"PANE ELÉTRICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO","ano":"2026","mes_num":11},{"id":151,"bso":"BS-04","viatura":"GP-04","placa":"FVH9J63","data_baixa":"2026-11-14","data_baixa_br":"14/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":12,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"FALHA NO SISTEMA DE TRANSMISSÃO","ano":"2026","mes_num":11},{"id":152,"bso":"BS-05","viatura":"IT-06R","placa":"TTC1F52","data_baixa":"2026-11-14","data_baixa_br":"14/11/2026","data_retorno":"2026-11-16","data_retorno_br":"16/11/2026","tempo_indisponivel":2,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA CAIXA DE MARCHA","ano":"2026","mes_num":11},{"id":153,"bso":"BS-05","viatura":"CP-05","placa":"RKD9A48","data_baixa":"2026-11-16","data_baixa_br":"16/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":10,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"PROBLEMA NA MANGUEIRA / VTR SOMENTE PARA SINALIZAÇÃO","ano":"2026","mes_num":11},{"id":154,"bso":"BS-05","viatura":"IT-05","placa":"SZM5D22","data_baixa":"2026-11-17","data_baixa_br":"17/11/2026","data_retorno":"2026-11-25","data_retorno_br":"25/11/2026","tempo_indisponivel":8,"status":"DISPONÍVEL","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"VTR NÃO ACIONA PARTIDA","ano":"2026","mes_num":11},{"id":155,"bso":"BS-01","viatura":"IT-01","placa":"SZM5D32","data_baixa":"2026-11-24","data_baixa_br":"24/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":2,"status":"EM BAIXA","tipo_baixa":"MANUTENÇÃO PREVENTIVA","locadora":"GRUPO PINHO","motivo":"TROCA DE ÓLEO","ano":"2026","mes_num":11},{"id":156,"bso":"BS-04","viatura":"CM-04","placa":"RIR3F12","data_baixa":"2026-11-24","data_baixa_br":"24/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":2,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"MANUTENÇÃO NA REDUTORA","ano":"2026","mes_num":11},{"id":157,"bso":"BS-02","viatura":"GP-02","placa":"EZN7D66","data_baixa":"2026-11-24","data_baixa_br":"24/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":2,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"TROCA DO RETENTOR","ano":"2026","mes_num":11},{"id":158,"bso":"BS-03","viatura":"CP-03","placa":"SRR1I60","data_baixa":"2026-11-25","data_baixa_br":"25/11/2026","data_retorno":"","data_retorno_br":"-","tempo_indisponivel":1,"status":"EM BAIXA","tipo_baixa":"PANE MECÂNICA","locadora":"GRUPO PINHO","motivo":"SISTEMA DE EMBREAGEM","ano":"2026","mes_num":11}];
+    let FROTA_DATA = [{"prefixo":"AC-06R","base":"BS-01","area":"AMBULÂNCIA/RESGATE","status":"ATIVADO"},{"prefixo":"AC-01","base":"BS-01","area":"AMBULÂNCIA/RESGATE","status":"ATIVADO"},{"prefixo":"AC-04","base":"BS-04","area":"AMBULÂNCIA/RESGATE","status":"ATIVADO"},{"prefixo":"AC-05","base":"BS-05","area":"AMBULÂNCIA/RESGATE","status":"ATIVADO"},{"prefixo":"AC-02","base":"BS-02","area":"AMBULÂNCIA/RESGATE","status":"ATIVADO"},{"prefixo":"AC-03","base":"BS-03","area":"AMBULÂNCIA/RESGATE","status":"ATIVADO"},{"prefixo":"CM-01","base":"BS-01","area":"CAMINHAO MULTIUSO C/MUNCK","status":"ATIVADO"},{"prefixo":"CP-01","base":"BS-01","area":"CAMINHÃO PIPA","status":"ATIVADO"},{"prefixo":"GL-01","base":"BS-01","area":"GUINCHO LEVE","status":"ATIVADO"},{"prefixo":"GP-03R","base":"BS-01","area":"GUINCHO PESADO","status":"ATIVADO"},{"prefixo":"IT-01","base":"BS-01","area":"INSPEÇÃO","status":"ATIVADO"},{"prefixo":"CM-02","base":"BS-02","area":"CAMINHAO MULTIUSO S/MUNCK","status":"ATIVADO"},{"prefixo":"CP-02","base":"BS-02","area":"CAMINHÃO PIPA","status":"ATIVADO"},{"prefixo":"GP-02","base":"BS-02","area":"GUINCHO PESADO","status":"ATIVADO"},{"prefixo":"IT-02","base":"BS-02","area":"INSPEÇÃO","status":"ATIVADO"},{"prefixo":"GL-02","base":"BS-02","area":"GUINCHO LEVE","status":"ATIVADO"},{"prefixo":"CM-03","base":"BS-03","area":"CAMINHÃO MULTIUSO C/MUNCK","status":"ATIVADO"},{"prefixo":"CP-03","base":"BS-03","area":"CAMINHÃO PIPA","status":"ATIVADO"},{"prefixo":"GL-03","base":"BS-03","area":"GUINCHO LEVE","status":"ATIVADO"},{"prefixo":"GP-01","base":"BS-01","area":"GUINCHO PESADO","status":"DESATIVADO"},{"prefixo":"IT-03","base":"BS-03","area":"INSPEÇÃO","status":"ATIVADO"},{"prefixo":"CM-04","base":"BS-04","area":"CAMINHAO MULTIUSO S/MUNCK","status":"ATIVADO"},{"prefixo":"CP-04","base":"BS-04","area":"CAMINHÃO PIPA","status":"ATIVADO"},{"prefixo":"GL-04","base":"BS-04","area":"GUINCHO LEVE","status":"ATIVADO"},{"prefixo":"GP-04","base":"BS-04","area":"GUINCHO PESADO","status":"ATIVADO"},{"prefixo":"IT-04","base":"BS-04","area":"INSPEÇÃO","status":"ATIVADO"},{"prefixo":"CM-05","base":"BS-05","area":"CAMINHÃO MULTIUSO C/MUNCK","status":"ATIVADO"},{"prefixo":"CP-05","base":"BS-05","area":"CAMINHÃO PIPA","status":"ATIVADO"},{"prefixo":"GL-05","base":"BS-05","area":"GUINCHO LEVE","status":"ATIVADO"},{"prefixo":"IT-05","base":"BS-05","area":"INSPEÇÃO","status":"ATIVADO"},{"prefixo":"IT-06R","base":"BS-05","area":"INSPEÇÃO RESERVA","status":"ATIVADO"},{"prefixo":"C-02","base":"BS-01","area":"GER. OPERAÇÕES","status":"ATIVADO"},{"prefixo":"G-01","base":"BS-01","area":"GER. OPERAÇÕES","status":"ATIVADO"},{"prefixo":"S-01","base":"BS-01","area":"GER. OPERAÇÕES","status":"ATIVADO"},{"prefixo":"S-02","base":"BS-01","area":"GER. OPERAÇÕES","status":"ATIVADO"},{"prefixo":"S-03","base":"BS-01","area":"GER. OPERAÇÕES","status":"ATIVADO"},{"prefixo":"S-04","base":"BS-01","area":"GER. OPERAÇÕES","status":"ATIVADO"},{"prefixo":"GP-02R","base":"BAIXADO","area":"GUINCHO PESADO","status":"DESATIVADO"},{"prefixo":"GP-04R","base":"BAIXADO","area":"GUINCHO PESADO","status":"DESATIVADO"},{"prefixo":"s/ plotagem","base":"BAIXADO","area":"GUINCHO LEVE","status":"DESATIVADO"}];
 
     let selectedBases = [];
     let activeChartFilter = { type: null, value: null };
