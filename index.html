@@ -171,7 +171,7 @@
 
   <input type="file" id="fileUploadInput" accept=".xlsx, .xls" style="display: none;" onchange="handleFileUpload(event)">
 
-  <div class="modal-overlay" id="modalMedicao" style="display: none;">
+  <div class="modal-overlay" id="modalMedicao">
     <div class="modal-box">
       <div class="modal-title">Exportar Planilha de Medição Mensal</div>
       <div class="modal-desc">
@@ -2153,8 +2153,12 @@
       }
     }
 
-    function toggleInteractiveFilter(filterType, val) {
-      if (activeChartFilter.type === filterType && activeChartFilter.value === val) {
+        function toggleInteractiveFilter(filterType, val) {
+      const currentBusca = document.getElementById('filterBusca').value.toUpperCase().trim();
+      const isAlreadyActive = (activeChartFilter.type === filterType && activeChartFilter.value === val) ||
+                              (filterType === 'viatura' && currentBusca === String(val).toUpperCase().trim());
+
+      if (isAlreadyActive) {
         activeChartFilter = { type: null, value: null };
         if (filterType === 'tipo_baixa') document.getElementById('filterTipo').value = 'ALL';
         if (filterType === 'locadora') document.getElementById('filterLocadora').value = 'ALL';
@@ -2554,8 +2558,7 @@
         totalDiasBaixasAtivas += item.tempo_indisponivel;
         const tr = document.createElement('tr');
         tr.onclick = () => {
-          document.getElementById('filterBusca').value = item.viatura;
-          applyFilters();
+          toggleInteractiveFilter('viatura', item.viatura);
         };
 
         const corDias = item.tempo_indisponivel > 20 ? 'color: #C53030; font-weight: 700;' : 'color: #1E293B; font-weight: 700;';
@@ -2607,8 +2610,7 @@
         totalDiasOfensores += item.dias;
         const tr = document.createElement('tr');
         tr.onclick = () => {
-          document.getElementById('filterBusca').value = item.viatura;
-          applyFilters();
+          toggleInteractiveFilter('viatura', item.viatura);
         };
 
         let badgeStatus = '<span class="tag-badge success-tag">Disponível</span>';
