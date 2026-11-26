@@ -171,20 +171,24 @@
 
   <input type="file" id="fileUploadInput" accept=".xlsx, .xls" style="display: none;" onchange="handleFileUpload(event)">
 
-  <div class="modal-overlay" id="modalMedicao">
+  <div class="modal-overlay" id="modalMedicao" style="display: none;">
     <div class="modal-box">
       <div class="modal-title">Exportar Planilha de Medição Mensal</div>
       <div class="modal-desc">
         Selecione o ciclo de medição (21 a 20 do mês seguinte). A planilha gerada replica integralmente o layout, cores, fontes, logo e fórmulas do modelo oficial.
       </div>
-      <div class="period-options">
-        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-09-21', '2026-10-20', 'Setembro/Outubro')">
-          <div>Setembro / Outubro 2026</div>
-          <span>21/09/2026 a 20/10/2026</span>
+      <div class="period-options" style="max-height: 380px; overflow-y: auto; padding-right: 4px;">
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-11-21', '2026-12-20', 'Novembro/Dezembro')">
+          <div>Novembro / Dezembro 2026</div>
+          <span>21/11/2026 a 20/12/2026</span>
         </button>
         <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-10-21', '2026-11-20', 'Outubro/Novembro')">
           <div>Outubro / Novembro 2026</div>
           <span>21/10/2026 a 20/11/2026</span>
+        </button>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-09-21', '2026-10-20', 'Setembro/Outubro')">
+          <div>Setembro / Outubro 2026</div>
+          <span>21/09/2026 a 20/10/2026</span>
         </button>
         <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-08-21', '2026-09-20', 'Agosto/Setembro')">
           <div>Agosto / Setembro 2026</div>
@@ -194,9 +198,33 @@
           <div>Julho / Agosto 2026</div>
           <span>21/07/2026 a 20/08/2026</span>
         </button>
-        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-11-21', '2026-12-20', 'Novembro/Dezembro')">
-          <div>Novembro / Dezembro 2026</div>
-          <span>21/11/2026 a 20/12/2026</span>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-06-21', '2026-07-20', 'Junho/Julho')">
+          <div>Junho / Julho 2026</div>
+          <span>21/06/2026 a 20/07/2026</span>
+        </button>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-05-21', '2026-06-20', 'Maio/Junho')">
+          <div>Maio / Junho 2026</div>
+          <span>21/05/2026 a 20/06/2026</span>
+        </button>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-04-21', '2026-05-20', 'Abril/Maio')">
+          <div>Abril / Maio 2026</div>
+          <span>21/04/2026 a 20/05/2026</span>
+        </button>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-03-21', '2026-04-20', 'Março/Abril')">
+          <div>Março / Abril 2026</div>
+          <span>21/03/2026 a 20/04/2026</span>
+        </button>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-02-21', '2026-03-20', 'Fevereiro/Março')">
+          <div>Fevereiro / Março 2026</div>
+          <span>21/02/2026 a 20/03/2026</span>
+        </button>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2026-01-21', '2026-02-20', 'Janeiro/Fevereiro')">
+          <div>Janeiro / Fevereiro 2026</div>
+          <span>21/01/2026 a 20/02/2026</span>
+        </button>
+        <button class="period-btn" onclick="exportarMedicaoPeriodo('2025-12-21', '2026-01-20', 'Dezembro_2025/Janeiro_2026')">
+          <div>Dezembro 2025 / Janeiro 2026</div>
+          <span>21/12/2025 a 20/01/2026</span>
         </button>
       </div>
       <div class="modal-footer">
