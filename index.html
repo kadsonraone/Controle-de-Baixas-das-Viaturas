@@ -171,7 +171,7 @@
 
   <input type="file" id="fileUploadInput" accept=".xlsx, .xls" style="display: none;" onchange="handleFileUpload(event)">
 
-  <div class="modal-overlay" id="modalMedicao">
+  <div class="modal-overlay" id="modalMedicao" style="display: none;">
     <div class="modal-box">
       <div class="modal-title">Exportar Planilha de Medição Mensal</div>
       <div class="modal-desc">
@@ -2759,8 +2759,9 @@
       const workbook = new ExcelJS.Workbook();
       workbook.creator = 'CCO Rota do Pará';
 
+      // 1. ABA OCORRÊNCIAS NO PERÍODO (Linhas de grade desmarcadas)
       const ws1 = workbook.addWorksheet('Ocorrências no Período', {
-        views: [{ showGridLines: true }]
+        views: [{ showGridLines: false }]
       });
 
       ws1.columns = [
@@ -2768,21 +2769,23 @@
         { width: 20 }, { width: 18 }, { width: 24 }, { width: 18 }, { width: 45 }
       ];
 
+      ws1.getRow(1).height = 24;
+      ws1.getRow(2).height = 16;
+      ws1.getRow(3).height = 4;
+      ws1.mergeCells('A1:A2');
+
+      // Imagem proporcional e sem compressão dentro de A1:A2
       if (LOGO_ROTA_B64 && LOGO_ROTA_B64.length > 50) {
         const imageId1 = workbook.addImage({
           base64: 'data:image/png;base64,' + LOGO_ROTA_B64,
           extension: 'png',
         });
         ws1.addImage(imageId1, {
-          tl: { col: 0.1, row: 0.1 },
-          br: { col: 0.95, row: 1.95 }
+          tl: { col: 0.08, row: 0.12 },
+          ext: { width: 110, height: 48 },
+          editAs: 'oneCell'
         });
       }
-      ws1.mergeCells('A1:A2');
-
-      ws1.getRow(1).height = 23;
-      ws1.getRow(2).height = 15;
-      ws1.getRow(3).height = 4;
 
       ws1.getCell('B1').value = '    LEVANTAMENTO DE BAIXAS DE VIATURAS';
       ws1.getCell('B1').font = { name: 'Montserrat', size: 15, bold: true, color: { argb: 'FF264677' } };
@@ -2798,10 +2801,10 @@
         cell.font = { name: 'Montserrat', size: 10, bold: true, color: { argb: 'FFFFFFFF' } };
         cell.alignment = { vertical: 'middle', horizontal: 'center' };
         cell.border = {
-          bottom: { style: 'thin', color: { argb: 'FF73777F' } },
-          top: { style: 'thin', color: { argb: 'FF73777F' } },
-          left: { style: 'thin', color: { argb: 'FF73777F' } },
-          right: { style: 'thin', color: { argb: 'FF73777F' } }
+          bottom: { style: 'thin', color: { argb: 'FF475569' } },
+          top: { style: 'thin', color: { argb: 'FF475569' } },
+          left: { style: 'thin', color: { argb: 'FF475569' } },
+          right: { style: 'thin', color: { argb: 'FF475569' } }
         };
       });
 
@@ -2828,11 +2831,12 @@
         row.eachCell((cell, colNum) => {
           cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: bgArgb } };
           cell.font = { name: 'Roboto', size: 10, bold: (colNum === 9), color: { argb: 'FF191B1F' } };
+          // Bordas mais escuras e nítidas para dividir bem as células
           cell.border = {
-            bottom: { style: 'thin', color: { argb: 'FFDFE3EA' } },
-            top: { style: 'thin', color: { argb: 'FFDFE3EA' } },
-            left: { style: 'thin', color: { argb: 'FFDFE3EA' } },
-            right: { style: 'thin', color: { argb: 'FFDFE3EA' } }
+            bottom: { style: 'thin', color: { argb: 'FF94A3B8' } },
+            top: { style: 'thin', color: { argb: 'FF94A3B8' } },
+            left: { style: 'thin', color: { argb: 'FF94A3B8' } },
+            right: { style: 'thin', color: { argb: 'FF94A3B8' } }
           };
 
           if ([1, 2, 3, 6, 7, 9].includes(colNum)) {
@@ -2846,49 +2850,34 @@
         });
         rIdx++;
       });
+      // Linha TOTAL GERAL removida conforme solicitação
 
-      const totalRowWs1 = ws1.getRow(rIdx);
-      totalRowWs1.height = 21;
-      totalRowWs1.getCell(1).value = 'TOTAL GERAL';
-      totalRowWs1.getCell(8).value = { formula: `SUM(H5:H${rIdx - 1})` };
-      totalRowWs1.getCell(8).numFmt = '#,##0';
-
-      for (let c = 1; c <= 10; c++) {
-        const cell = totalRowWs1.getCell(c);
-        cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFD6E3FF' } };
-        cell.font = { name: 'Montserrat', size: 10, bold: true, color: { argb: 'FF191B1F' } };
-        cell.alignment = (c === 8) ? { vertical: 'middle', horizontal: 'right' } : { vertical: 'middle', horizontal: 'left' };
-        cell.border = {
-          bottom: { style: 'thin', color: { argb: 'FF73777F' } },
-          top: { style: 'thin', color: { argb: 'FF73777F' } },
-          left: { style: 'thin', color: { argb: 'FF73777F' } },
-          right: { style: 'thin', color: { argb: 'FF73777F' } }
-        };
-      }
-
+      // 2. ABA RESUMO POR VIATURA (Linhas de grade desmarcadas)
       const ws2 = workbook.addWorksheet('Resumo por Viatura', {
-        views: [{ showGridLines: true }]
+        views: [{ showGridLines: false }]
       });
 
       ws2.columns = [
         { width: 16 }, { width: 16 }, { width: 14 }, { width: 32 }, { width: 24 }, { width: 19 }
       ];
 
+      ws2.getRow(1).height = 24;
+      ws2.getRow(2).height = 16;
+      ws2.getRow(3).height = 4;
+      ws2.mergeCells('A1:A2');
+
+      // Imagem proporcional e sem compressão dentro de A1:A2 na aba 2
       if (LOGO_ROTA_B64 && LOGO_ROTA_B64.length > 50) {
         const imageId2 = workbook.addImage({
           base64: 'data:image/png;base64,' + LOGO_ROTA_B64,
           extension: 'png',
         });
         ws2.addImage(imageId2, {
-          tl: { col: 0.1, row: 0.1 },
-          br: { col: 0.95, row: 1.95 }
+          tl: { col: 0.08, row: 0.12 },
+          ext: { width: 110, height: 48 },
+          editAs: 'oneCell'
         });
       }
-      ws2.mergeCells('A1:A2');
-
-      ws2.getRow(1).height = 24;
-      ws2.getRow(2).height = 15;
-      ws2.getRow(3).height = 4;
 
       ws2.getCell('B1').value = '  PAINEL CONSOLIDADO DE BAIXAS POR VIATURA';
       ws2.getCell('B1').font = { name: 'Montserrat', size: 15, bold: true, color: { argb: 'FF264677' } };
@@ -2920,13 +2909,21 @@
         cTitle.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFD6E3FF' } };
         cTitle.font = { name: 'Montserrat', size: 8, bold: true, color: { argb: 'FF264677' } };
         cTitle.alignment = { vertical: 'middle', horizontal: 'center' };
-        cTitle.border = { top: { style: 'thin', color: { argb: 'FFCBD5E1' } }, left: { style: 'thin', color: { argb: 'FFCBD5E1' } }, right: { style: 'thin', color: { argb: 'FFCBD5E1' } } };
+        cTitle.border = { 
+          top: { style: 'thin', color: { argb: 'FF94A3B8' } }, 
+          left: { style: 'thin', color: { argb: 'FF94A3B8' } }, 
+          right: { style: 'thin', color: { argb: 'FF94A3B8' } } 
+        };
 
         const cVal = r5.getCell(c);
         cVal.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFD6E3FF' } };
         cVal.font = { name: 'Montserrat', size: 18, bold: true, color: { argb: 'FF264677' } };
         cVal.alignment = { vertical: 'middle', horizontal: 'center' };
-        cVal.border = { bottom: { style: 'thin', color: { argb: 'FFCBD5E1' } }, left: { style: 'thin', color: { argb: 'FFCBD5E1' } }, right: { style: 'thin', color: { argb: 'FFCBD5E1' } } };
+        cVal.border = { 
+          bottom: { style: 'thin', color: { argb: 'FF94A3B8' } }, 
+          left: { style: 'thin', color: { argb: 'FF94A3B8' } }, 
+          right: { style: 'thin', color: { argb: 'FF94A3B8' } } 
+        };
         if (c === 4) cVal.numFmt = '#,##0.0';
         else cVal.numFmt = '#,##0';
       }
@@ -2948,10 +2945,10 @@
         cell.font = { name: 'Montserrat', size: 10, bold: true, color: { argb: 'FFFFFFFF' } };
         cell.alignment = { vertical: 'middle', horizontal: (colNum === 4 ? 'left' : 'center') };
         cell.border = {
-          bottom: { style: 'thin', color: { argb: 'FF73777F' } },
-          top: { style: 'thin', color: { argb: 'FF73777F' } },
-          left: { style: 'thin', color: { argb: 'FF73777F' } },
-          right: { style: 'thin', color: { argb: 'FF73777F' } }
+          bottom: { style: 'thin', color: { argb: 'FF475569' } },
+          top: { style: 'thin', color: { argb: 'FF475569' } },
+          left: { style: 'thin', color: { argb: 'FF475569' } },
+          right: { style: 'thin', color: { argb: 'FF475569' } }
         };
       });
 
@@ -2975,10 +2972,10 @@
           cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: bgArgb } };
           cell.font = { name: 'Roboto', size: 10, bold: (colNum === 6), color: { argb: 'FF191B1F' } };
           cell.border = {
-            bottom: { style: 'thin', color: { argb: 'FFDFE3EA' } },
-            top: { style: 'thin', color: { argb: 'FFDFE3EA' } },
-            left: { style: 'thin', color: { argb: 'FFDFE3EA' } },
-            right: { style: 'thin', color: { argb: 'FFDFE3EA' } }
+            bottom: { style: 'thin', color: { argb: 'FF94A3B8' } },
+            top: { style: 'thin', color: { argb: 'FF94A3B8' } },
+            left: { style: 'thin', color: { argb: 'FF94A3B8' } },
+            right: { style: 'thin', color: { argb: 'FF94A3B8' } }
           };
 
           if ([1, 2, 3, 6].includes(colNum)) {
@@ -3005,10 +3002,10 @@
         cell.font = { name: 'Montserrat', size: 10, bold: true, color: { argb: 'FF191B1F' } };
         cell.alignment = (c === 5) ? { vertical: 'middle', horizontal: 'right' } : { vertical: 'middle', horizontal: 'left' };
         cell.border = {
-          bottom: { style: 'thin', color: { argb: 'FF73777F' } },
-          top: { style: 'thin', color: { argb: 'FF73777F' } },
-          left: { style: 'thin', color: { argb: 'FF73777F' } },
-          right: { style: 'thin', color: { argb: 'FF73777F' } }
+          bottom: { style: 'thin', color: { argb: 'FF475569' } },
+          top: { style: 'thin', color: { argb: 'FF475569' } },
+          left: { style: 'thin', color: { argb: 'FF475569' } },
+          right: { style: 'thin', color: { argb: 'FF475569' } }
         };
       }
 
